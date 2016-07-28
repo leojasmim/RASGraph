@@ -17,7 +17,7 @@ public class CSVReaderTest {
 
     @Test
     public void csvReaderTest() throws IOException {
-        assertFalse(CSVReader.readCsvFile("C:/Users/leoja/Desk"));
-        assertTrue(CSVReader.readCsvFile("C:/Users/leoja/Desktop/teste.csv"));
+        assertFalse(CSVReader.printCsvFile("C:/Users/leoja/Desk"));
+        assertTrue(CSVReader.printCsvFile("C:/Users/leoja/Desktop/teste.csv"));
     }
 }
