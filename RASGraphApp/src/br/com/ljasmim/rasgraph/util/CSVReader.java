@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class CSVReader {
 
-    public static void readCsvFile(String path) throws IOException {
+    public static boolean readCsvFile(String path) throws IOException {
         try {
             try (BufferedReader stream = new BufferedReader(new FileReader(path))) {
                 String tupla;
@@ -23,14 +23,16 @@ public class CSVReader {
                 }
             }
         } catch (IOException ex) {
-
+            System.out.println(ex.getMessage());
+            return false;
         }
+        return true;
     }
 
     public static void printCsvLine(String[] celulas) {
         for (String celula : celulas) {
-            System.out.println(celula + " ");
+            System.out.print(celula + " | ");
         }
-        System.out.println("\n");
+        System.out.println();
     }
 }
