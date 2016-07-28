@@ -31,11 +31,12 @@ public class CSVReader {
                     celulasDaTupla = tupla.split(";");
                     printLines(celulasDaTupla);
                 }
+                stream.close();
             }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
             return false;
-        }
+        } 
         return true;
     }
 
@@ -68,21 +69,23 @@ public class CSVReader {
     }
 
     /**
-     * Lê as tuplas de um arquivo .csv e carrega os valores para uma lista de 
+     * Lê as tuplas de um arquivo .csv e carrega os valores para uma lista de
      * registros de atendimento.
-     * 
+     *
      * @param pathToCsv - caminho para o arquivo .csv
      * @return Lista com os registros
      * @throws IOException
      */
-    public static List<RegistroDeAtendimento> loadCsvToRegistros(String pathToCsv)
+    public static List<RegistroDeAtendimento> loadCsvToRegistro(String pathToCsv)
             throws IOException {
         try {
             try (BufferedReader stream = readCsvFile(pathToCsv)) {
+
                 String tupla;
                 String[] celulasDaTupla;
                 RegistroDeAtendimento registro;
                 List<RegistroDeAtendimento> registros = new ArrayList();
+                
                 while ((tupla = stream.readLine()) != null) {
                     celulasDaTupla = tupla.split(";");
                     registro = new RegistroDeAtendimento(
@@ -102,6 +105,7 @@ public class CSVReader {
                     registros.add(registro);
                 }
                 registros.remove(0); //Retirar cabecalho
+                stream.close();
                 return registros;
             }
         } catch (IOException ex) {
