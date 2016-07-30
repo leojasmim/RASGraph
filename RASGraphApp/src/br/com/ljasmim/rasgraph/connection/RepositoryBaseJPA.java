@@ -85,4 +85,16 @@ public class RepositoryBaseJPA< T, PK extends Serializable> implements IReposito
         return DriverManager.getConnection("jdbc:postgresql://localhost:5432/rasgraph_db", "postgres", "postgres");
     }
     
+     /**
+     * Testa se a conexão com a base vigdengue_db é valida.
+     *
+     * @return true se a conexão for válida; false caso contrário;
+     */
+    public static boolean isConexaoValida() {
+        try {
+            return getDataConnection().isValid(0);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

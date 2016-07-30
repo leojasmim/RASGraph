@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Classe Geradora dos scripts de dados
@@ -13,7 +14,97 @@ import java.util.List;
  */
 public class GeradorDeScript {
 
-    public static String getScriptString(List<String> paths) {
+    /**
+     * Cria o arquivo .sql
+     * 
+     * @param scriptSqlString Conteudo do script em linguagem sql
+     * @param sqlPath Caminho para arquivo .sql gerado
+     * 
+     * @return arquivo .sql com script
+     */
+    public static File getScriptSqlFile(String scriptSqlString, String sqlPath) {
+        File sqlFile = new File(sqlPath);
+        try {
+            sqlFile.createNewFile();
+            FileWriter writer = new FileWriter(sqlFile, true);
+            BufferedWriter buffer = new BufferedWriter(writer);
+            buffer.write(scriptSqlString);
+            buffer.newLine();
+            buffer.close();
+            writer.close();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+        return sqlFile;
+    }
+
+    /**
+     * Cria arquivo .bat para executar o script .sql
+     * 
+     * @param sqlFile Arquivo .sql com script de criação da base de dados
+     * @param batchPath nome do arquivo de saída para o arquivo
+     * 
+     * @return arquivo .bat
+     * 
+     * @throws IOException 
+     */
+    public static File getBatchForRunSqlFile(File sqlFile, String batchPath) throws IOException {
+        File batchFile = new File(batchPath);
+        try {
+            batchFile.createNewFile();
+        } catch (IOException ex) {
+            return null;
+        }
+        FileWriter writer = new FileWriter(batchFile, true);
+        BufferedWriter buffer = new BufferedWriter(writer);
+        buffer.write("@echo off\n"
+                + "C:\\\"Arquivos de programas\"\\PostgreSQL\\9.3\\bin\\psql.exe -U postgres -f "
+                + sqlFile.getPath()
+                + "\n");
+        buffer.newLine();
+        buffer.close();
+        writer.close();
+         
+        return batchFile;
+    }
+    
+    /**
+     * Executa rotina sql
+     * 
+     * @param batchFile arquivo .bat para execução do script sql
+     * 
+     * @return true caso execute o arquivo, false caso contrário
+     * 
+     * @throws IOException
+     */
+    public static boolean runBatchFile(File batchFile) throws IOException {
+        try {
+            Process proc = Runtime.getRuntime().exec(batchFile.getPath());
+            Scanner retorno = new Scanner(proc.getInputStream());
+            while (retorno.hasNextLine()) {
+                System.out.println(retorno.nextLine());
+            }
+            switch (proc.exitValue()) {
+                case 0:
+                    return true;
+                default:
+                    return false;
+            }
+        } catch (IOException ex) {
+            return false;
+        }
+    }
+    
+    //CRIAÇÃO DA BASE DE DADOS
+    
+    /**
+     * Gerar o conteudo do script para a criação da base de dados rasgraph e da 
+     * tabela de registros de atendimento
+     * 
+     * @return Conteúdo do script para criação da rasgraph_db
+     */  
+    public static String getScriptStringForCreateDatabase() {
         String script = "DROP DATABASE rasgraph_db;\n"
                 + "CREATE DATABASE rasgraph_db\n"
                 + "  WITH OWNER = postgres\n"
@@ -70,33 +161,33 @@ public class GeradorDeScript {
                 + "  CONSTRAINT registrodeatendimento_pkey PRIMARY KEY (id)\n"
                 + ") WITH (OIDS=FALSE);\n"
                 + "ALTER TABLE registrodeatendimento OWNER TO postgres;\n";
+        return script;
+    }
+    
+    //CARREGAMENTO DE DADOS
+    
+    /**
+     * Gera o conteudo do script sql para copiar os arquivos .csv para a tabela 
+     * registro de atendimentos
+     * 
+     * @param paths Lista com caminhos para os arquivos .cvs
+     * 
+     * @return Conteúdo do script para criação da rasgraph_db
+     */
+    public static String getScriptStringForCopyCvs(List<String> paths) {
+        String script = "\\c rasgraph_db \n\n";
         for (String path : paths) {
             script = script
-                    + "\n"
                     + "COPY registrodeatendimento\n"
                     + "(dt_atend,dt_nasc,sexo,tipounid_cod,tipounid_desc,unid_cod,unid_desc,proc_cod,\n"
                     + "proc_desc,cbo_cod,cbo_desc,cid_cod,cid_desc,sol_exame,qtdmed_presc,qtdmed_disp,qtdmed_npadrao,\n"
                     + "enc_esp,area_atuacao,enc_inter,dt_inter,unid_sol_inter,unid_dest_inter,cid_inter,trat_agua,\n"
                     + "abast_agua,energia,tipo_hab,dest_lixo,fezes_urina,comodos,caso_doenca,grupo_comun,meio_comun,\n"
                     + "meio_transp,municipio,bairro)\n"
-                    + "FROM '" + path + "'using delimiters ';' WITH NULL AS '' encoding 'latin1' CSV HEADER;\n";
+                    + "FROM '" + path + "' using delimiters ';' WITH NULL AS '' encoding 'latin1' CSV HEADER;\n\n";
         }
+        
+        script += "vacuum;\n\n";
         return script;
-    }
-
-    public static void createScriptSQL(String scriptString) {
-        File script = new File("loadCSV.sql");
-        try {
-            script.createNewFile();
-            FileWriter escritorDoScript = new FileWriter(script, true);
-            BufferedWriter buffer = new BufferedWriter(escritorDoScript);
-            buffer.write(scriptString);
-            buffer.newLine();
-            buffer.close();
-            escritorDoScript.close();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }           
-            
+    }      
 }
