@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Classe Geradora dos scripts de dados
@@ -85,7 +86,7 @@ public class GeradorDeScript {
     }
 
     public static void createScriptSQL(String scriptString) {
-        File script = new File("loadCSV.sql");
+        File script = new File("dist/loadCSV.sql");
         try {
             script.createNewFile();
             FileWriter escritorDoScript = new FileWriter(script, true);
@@ -97,6 +98,155 @@ public class GeradorDeScript {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }           
-            
+    }
+
+    //
+    
+    /**
+     * Gerar o conteudo do script para a criação da base de dados rasgraph e da 
+     * tabela de registros de atendimento
+     * 
+     * @return Conteúdo do para criação da rasgraph_db
+     */
+        
+    public static String getScriptStringForCreateDatabase() {
+        String script = "DROP DATABASE rasgraph_db;\n"
+                + "CREATE DATABASE rasgraph_db\n"
+                + "  WITH OWNER = postgres\n"
+                + "       ENCODING = 'UTF8'\n"
+                + "       TABLESPACE = pg_default\n"
+                + "       LC_COLLATE = 'Portuguese_Brazil.1252'\n"
+                + "       LC_CTYPE = 'Portuguese_Brazil.1252'\n"
+                + "       CONNECTION LIMIT = -1;\n"
+                + "	  \n"
+                + "\\c rasgraph_db\n"
+                + "\n"
+                + "DROP TABLE IF EXISTS registrodeatendimento CASCADE;\n"
+                + "\n"
+                + "CREATE TABLE registrodeatendimento\n"
+                + "(\n"
+                + "  id bigserial NOT NULL,\n"
+                + "  abast_agua character varying(255),\n"
+                + "  area_atuacao character varying(255),\n"
+                + "  bairro character varying(255),\n"
+                + "  cbo_cod character varying(255),\n"
+                + "  cbo_desc character varying(255),\n"
+                + "  cid_cod character varying(255),\n"
+                + "  cid_desc character varying(255),\n"
+                + "  cid_inter character varying(255),\n"
+                + "  comodos character varying(255),\n"
+                + "  dt_atend character varying(255),\n"
+                + "  dt_inter character varying(255),\n"
+                + "  dt_nasc character varying(255),\n"
+                + "  dest_lixo character varying(255),\n"
+                + "  caso_doenca character varying(255),\n"
+                + "  enc_esp character varying(255),\n"
+                + "  enc_inter character varying(255),\n"
+                + "  energia character varying(255),\n"
+                + "  fezes_urina character varying(255),\n"
+                + "  grupo_comun character varying(255),\n"
+                + "  meio_comun character varying(255),\n"
+                + "  meio_transp character varying(255),\n"
+                + "  municipio character varying(255),\n"
+                + "  proc_cod character varying(255),\n"
+                + "  proc_desc character varying(255),\n"
+                + "  qtdmed_disp character varying(255),\n"
+                + "  qtdmed_npadrao character varying(255),\n"
+                + "  qtdmed_presc character varying(255),\n"
+                + "  sexo character varying(255),\n"
+                + "  sol_exame character varying(255),\n"
+                + "  tipo_hab character varying(255),\n"
+                + "  tipounid_cod character varying(255),\n"
+                + "  tipounid_desc character varying(255),\n"
+                + "  trat_agua character varying(255),\n"
+                + "  unid_cod character varying(255),\n"
+                + "  unid_desc character varying(255),\n"
+                + "  unid_dest_inter character varying(255),\n"
+                + "  unid_sol_inter character varying(255),\n"
+                + "  CONSTRAINT registrodeatendimento_pkey PRIMARY KEY (id)\n"
+                + ") WITH (OIDS=FALSE);\n"
+                + "ALTER TABLE registrodeatendimento OWNER TO postgres;\n";
+        return script;
+    }
+
+    /**
+     * Cria o arquivo .sql com o script para criação da base de dados rasgraph
+     * 
+     * @param scriptSqlString conteudo do script de criação da base
+     * @param sqlPath caminho para criação do arquivo .sql
+     * 
+     * @return arquivo .sql
+     */
+    public static File getScriptSqlForCreateDatabase(String scriptSqlString, String sqlPath) {
+        File sqlFile = new File(sqlPath);
+        try {
+            sqlFile.createNewFile();
+            FileWriter writer = new FileWriter(sqlFile, true);
+            BufferedWriter buffer = new BufferedWriter(writer);
+            buffer.write(scriptSqlString);
+            buffer.newLine();
+            buffer.close();
+            writer.close();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return sqlFile;
+    }
+
+    /**
+     * Cria arquivo .bat para executar o script de criação da base de dados
+     * 
+     * @param sqlFile arquivo .sql com script de criação da base de dados
+     * 
+     * @return arquivo .bat
+     * 
+     * @throws IOException 
+     */
+    public static File getBatchForCreateDatabase(File sqlFile) throws IOException {
+        String batchPath = "dist/create.bat";
+        File batchFile = new File(batchPath);
+        try {
+            batchFile.createNewFile();
+        } catch (IOException ex) {
+            return null;
+        }
+        FileWriter writer = new FileWriter(batchFile, true);
+        BufferedWriter buffer = new BufferedWriter(writer);
+        buffer.write("@echo off\n"
+                + "C:\\\"Arquivos de programas\"\\PostgreSQL\\9.3\\bin\\psql.exe -U postgres -f "
+                + sqlFile.getPath()
+                + "\n");
+        buffer.newLine();
+        buffer.close();
+        writer.close();
+         
+        return batchFile;
+    }
+    
+    /**
+     * Executa rotina de criação da base de dados rasgraph
+     * @param batchFile arquivo .bat para execução do script
+     * 
+     * @return true caso execute o arquivo, false caso contrário
+     * 
+     * @throws IOException
+     */
+    public static boolean runCreateDatabaseBatchFile(File batchFile) throws IOException {
+        try {
+            Process proc = Runtime.getRuntime().exec(batchFile.getPath());
+            Scanner retorno = new Scanner(proc.getInputStream());
+            while (retorno.hasNextLine()) {
+                System.out.println(retorno.nextLine());
+            }
+            switch (proc.exitValue()) {
+                case 0:
+                    return true;
+                default:
+                    return false;
+            }
+        } catch (IOException ex) {
+            return false;
+        }
+    }
+    
 }
