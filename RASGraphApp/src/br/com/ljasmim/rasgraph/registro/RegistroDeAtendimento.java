@@ -21,115 +21,115 @@ public class RegistroDeAtendimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "a_dt_atend")
+    @Column(name = "dt_atend")
     private String dataAtendimento;
     
-    @Column(name = "b_dt_nasc")
+    @Column(name = "dt_nasc")
     private String dataNascimento;
     
-    @Column(name = "c_sexo")
+    @Column(name = "sexo")
     private String sexo;
     
-    @Column(name = "d_tipounid_cod")
+    @Column(name = "tipounid_cod")
     private String tipoUnidadeCodigo;
 
-    @Column(name = "e_tipounid_desc")
+    @Column(name = "tipounid_desc")
     private String tipoUnidadeDescricao;
     
-    @Column(name = "f_unid_cod")
+    @Column(name = "unid_cod")
     private String unidadeCodigo;
     
-    @Column(name = "g_unid_desc")
+    @Column(name = "unid_desc")
     private String unidadeDescricao;
     
-    @Column(name = "h_proc_cod")
+    @Column(name = "proc_cod")
     private String procedimentoCodigo;
     
-    @Column(name = "i_proc_desc")
+    @Column(name = "proc_desc")
     private String procedimentoDescricao;
     
-    @Column(name = "j_cbo_cod")
+    @Column(name = "cbo_cod")
     private String cboCodigo;
     
-    @Column(name = "k_cbo_desc")
+    @Column(name = "cbo_desc")
     private String cboDescricao;
     
-    @Column(name = "l_cid_cod")
+    @Column(name = "cid_cod")
     private String cidCodigo;
     
-    @Column(name = "m_cid_desc")
+    @Column(name = "cid_desc")
     private String cidDescricao;
     
-    @Column(name = "n_sol_exame")
+    @Column(name = "sol_exame")
     private String solicitacaoExame;
     
-    @Column(name = "o_qtdmed_presc")
+    @Column(name = "qtdmed_presc")
     private String qtdMedicacaoPrescrita;
     
-    @Column(name = "p_qtdmed_disp")
+    @Column(name = "qtdmed_disp")
     private String qtdMedicacaoDispensada;
     
-    @Column(name = "q_qtdmed_npadrao")
+    @Column(name = "qtdmed_npadrao")
     private String qtdMedicacaoNaoPadronizada;
     
-    @Column(name = "r_enc_esp")
+    @Column(name = "enc_esp")
     private String encaminhadoAoEspecialista;
     
-    @Column(name = "s_area_atuacao")
+    @Column(name = "area_atuacao")
     private String areaAtuacaoEspecialista;
     
-    @Column(name = "t_enc_inter")
+    @Column(name = "enc_inter")
     private String encaminhadoParaIntenacao;
     
-    @Column(name = "u_dt_inter")
+    @Column(name = "dt_inter")
     private String dataInternacao;
     
-    @Column(name = "v_unid_sol_inter")
+    @Column(name = "unid_sol_inter")
     private String unidadeSolicitanteInternacao;
     
-    @Column(name = "w_unid_dest_inter")
+    @Column(name = "unid_dest_inter")
     private String unidadeDestinoInternacao;
     
-    @Column(name = "x_cid_inter")
+    @Column(name = "cid_inter")
     private String cidInternacao;
     
-    @Column(name = "y_trat_agua")
+    @Column(name = "trat_agua")
     private String tratamentoAgua;
     
-    @Column(name = "z_abast_agua")
+    @Column(name = "abast_agua")
     private String abastecimentoAgua;
     
-    @Column(name = "za_energia")
+    @Column(name = "energia")
     private String energiaEletrica;
     
-    @Column(name = "zb_tipo_hab")
+    @Column(name = "tipo_hab")
     private String tipoHabitacao;
     
-    @Column(name = "zc_dest_lixo")
+    @Column(name = "dest_lixo")
     private String destinoLixo;
     
-    @Column(name = "zd_fezes_urina")
+    @Column(name = "fezes_urina")
     private String fezesUrina;
     
-    @Column(name = "ze_comodos")
+    @Column(name = "comodos")
     private String comodos;
     
-    @Column(name = "zf_caso_doenca")
+    @Column(name = "caso_doenca")
     private String emCasoDoenca;
     
-    @Column(name = "zg_grupo_comun")
+    @Column(name = "grupo_comun")
     private String grupoComunitario;
     
-    @Column(name = "zh_meio_comun")
+    @Column(name = "meio_comun")
     private String meioComunicacao;
     
-    @Column(name = "zi_meio_transp")
+    @Column(name = "meio_transp")
     private String meioTransporte;
     
-    @Column(name = "zj_municipio")
+    @Column(name = "municipio")
     private String municipio;
     
-    @Column(name = "zk_bairro")
+    @Column(name = "bairro")
     private String bairro;
 
     public RegistroDeAtendimento(String dataAtendimento, String dataNascimento,
