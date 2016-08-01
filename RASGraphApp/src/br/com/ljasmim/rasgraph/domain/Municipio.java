@@ -50,17 +50,22 @@ public class Municipio implements Serializable {
 
     @Override
     public String toString() {
-        return nome;
+        return "Municipio{" + "id=" + id + ", nome=" + nome + '}';
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Municipio) {
-            Municipio m = (Municipio) obj;
-            return this.getNome().equals(m.getNome());
-        } else {
+        if (obj == null) {
             return false;
         }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Municipio other = (Municipio) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
     }
 
     @Override
