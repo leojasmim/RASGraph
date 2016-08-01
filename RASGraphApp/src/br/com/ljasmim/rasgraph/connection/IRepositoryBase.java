@@ -53,4 +53,11 @@ public interface IRepositoryBase< T, PK extends Serializable> {
      */
     public List<T> getAll();
 
+    /**
+     * Método abstrato que retorna o numero de tuplas de uma entidade.
+     *
+     * @return Número de objetos
+     */
+    public Long getCount();
+
 }

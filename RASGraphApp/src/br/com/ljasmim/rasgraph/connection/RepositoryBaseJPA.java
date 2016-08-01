@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 
 /**
  * Classe JPA que implementa a interface IRepositoryBase para as negociações com
@@ -73,6 +74,12 @@ public class RepositoryBaseJPA< T, PK extends Serializable> implements IReposito
         return getEntityManager().createQuery("Select o from " + entityClass.getSimpleName() + " o").getResultList();
     }
 
+    @Override
+    public Long getCount() {
+        TypedQuery<Long> query = getEntityManager().createQuery("Select count(o) from " + entityClass.getSimpleName() + " o", Long.class);
+        return query.getSingleResult();
+    }
+
     /**
      * Retorna uma conexão estabelecida atraves do método
      * DriverManager.getConnection().
@@ -84,8 +91,8 @@ public class RepositoryBaseJPA< T, PK extends Serializable> implements IReposito
     public static Connection getDataConnection() throws SQLException {
         return DriverManager.getConnection("jdbc:postgresql://localhost:5432/rasgraph_db", "postgres", "postgres");
     }
-    
-     /**
+
+    /**
      * Testa se a conexão com a base vigdengue_db é valida.
      *
      * @return true se a conexão for válida; false caso contrário;
