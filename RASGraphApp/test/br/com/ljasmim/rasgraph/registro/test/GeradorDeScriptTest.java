@@ -19,7 +19,7 @@ public class GeradorDeScriptTest {
     }
 
     @Test
-    public void gerarCreateDatabaseTest() throws IOException {
+    public void testGerarCreateDatabase() throws IOException {
         String sqlPath = "dist/create.sql";
         String batchPath = "dist/create.bat";
         String scriptString = GeradorDeScript.getScriptStringForCreateDatabase();
@@ -35,13 +35,12 @@ public class GeradorDeScriptTest {
     }
 
     @Test
-    public void gerarCopyCsvDentistasOutrosTest() throws IOException {
+    public void testGerarCopyCsvDentistas() throws IOException {
         List<String> paths = new ArrayList<>();
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
 
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_dentistas-dados_abertos.csv");
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
         
         String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
         File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
@@ -55,12 +54,49 @@ public class GeradorDeScriptTest {
     }
 
     @Test
-    public void gerarCopyCsvMedicosEnfermeirosTest() throws IOException {
+    public void testGerarCopyCsvOutros() throws IOException {
+        List<String> paths = new ArrayList<>();
+        String sqlPath = "dist/copyCsv.sql";
+        String batchPath = "dist/copyCsv.bat";
+
+        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
+        
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
+        Assert.assertTrue(scriptSql.exists());
+
+        File scriptBatch = GeradorDeScript.getBatchForRunSqlFile(scriptSql, batchPath);
+        Assert.assertTrue(GeradorDeScript.runBatchFile(scriptBatch));
+
+        scriptBatch.delete();
+        scriptSql.delete();
+    }
+    
+    @Test
+    public void testGerarCopyCsvEnfermeiros() throws IOException {
         List<String> paths = new ArrayList<>();
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
 
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
+               
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
+        Assert.assertTrue(scriptSql.exists());
+
+        File scriptBatch = GeradorDeScript.getBatchForRunSqlFile(scriptSql, batchPath);
+        Assert.assertTrue(GeradorDeScript.runBatchFile(scriptBatch));
+
+        scriptBatch.delete();
+        scriptSql.delete();
+    }
+    
+    @Test
+    public void testGerarCopyCsvMedicos() throws IOException {
+        List<String> paths = new ArrayList<>();
+        String sqlPath = "dist/copyCsv.sql";
+        String batchPath = "dist/copyCsv.bat";
+
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
         
         String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
