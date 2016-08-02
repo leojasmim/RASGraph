@@ -8,24 +8,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe que representa um especialista
+ * Classe que representa um grupo comunitário
  *
  * @author LeonardoJasmim
  */
 @Entity
-public class Especialista implements Serializable {
+public class GrupoComunitario implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
-    private String areaAtuacao;
+    private String descricao;
 
-    public Especialista() {
+    public GrupoComunitario() {
     }
 
-    public Especialista(long id, String areaAtuacao) {
+    public GrupoComunitario(long id, String descricao) {
         this.id = id;
-        this.areaAtuacao = areaAtuacao;
+        this.descricao = descricao;
     }
 
     public long getId() {
@@ -36,19 +37,19 @@ public class Especialista implements Serializable {
         this.id = id;
     }
 
-    public String getAreaAtuacao() {
-        return areaAtuacao;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setAreaAtuacao(String areaAtuacao) {
-        this.areaAtuacao = areaAtuacao;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 89 * hash + Objects.hashCode(this.areaAtuacao);
+        int hash = 7;
+        hash = 19 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 19 * hash + Objects.hashCode(this.descricao);
         return hash;
     }
 
@@ -60,8 +61,8 @@ public class Especialista implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Especialista other = (Especialista) obj;
-        if (!Objects.equals(this.areaAtuacao, other.areaAtuacao)) {
+        final GrupoComunitario other = (GrupoComunitario) obj;
+        if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
         return true;
@@ -69,7 +70,8 @@ public class Especialista implements Serializable {
 
     @Override
     public String toString() {
-        return "Especialista{" + "id=" + id + ", areaAtuacao=" + areaAtuacao + '}';
+        return "GrupoComunitario{" + "id=" + id + ", descricao=" + descricao + '}';
     }
+    
     
 }
