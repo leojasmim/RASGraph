@@ -9,26 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe que representa o tipo de coleta de lixo realizada na residência
+ * Classe que representa o tipo de habitação no qual se enquadra a residência
  *
  * @author LeonardoJasmim
  */
 @Entity
-public class ColetaLixo implements Serializable {
+public class TipoHabitacao implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "destino")
-    private String destino;
+    @Column(name = "tipo")
+    private String descricao;
 
-    public ColetaLixo(long id, String destino) {
-        this.id = id;
-        this.destino = destino;
+    public TipoHabitacao() {
     }
 
-    public ColetaLixo() {
+    public TipoHabitacao(long id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
     }
 
     public long getId() {
@@ -39,19 +39,19 @@ public class ColetaLixo implements Serializable {
         this.id = id;
     }
 
-    public String getDestino() {
-        return destino;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDestino(String destino) {
-        this.destino = destino;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 19 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 19 * hash + Objects.hashCode(this.destino);
+        int hash = 3;
+        hash = 79 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 79 * hash + Objects.hashCode(this.descricao);
         return hash;
     }
 
@@ -63,8 +63,8 @@ public class ColetaLixo implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ColetaLixo other = (ColetaLixo) obj;
-        if (!Objects.equals(this.destino, other.destino)) {
+        final TipoHabitacao other = (TipoHabitacao) obj;
+        if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
         return true;
@@ -72,6 +72,7 @@ public class ColetaLixo implements Serializable {
 
     @Override
     public String toString() {
-        return "ColetaLixo{" + "id=" + id + ", destino=" + destino + '}';
+        return "TipoHabitacao{" + "descricao=" + descricao + '}';
     }
+       
 }

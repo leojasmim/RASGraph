@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe para armazenar as entidades que representam os municípios
+ * Classe que representa a entidade Municipio
  *
  * @author LeonardoJasmim
  */

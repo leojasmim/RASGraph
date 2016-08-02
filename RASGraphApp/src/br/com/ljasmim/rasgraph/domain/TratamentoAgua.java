@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe para armazenar as entidades que representa o descricao de tratamento da
- agua de consumo
+ * Classe que representa o tratamento de agua para consumo realizado na 
+ * residência
  *
  * @author LeonardoJasmim
  */

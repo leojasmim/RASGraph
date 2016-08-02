@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
- * Classe para armazenar as entidades que representam um bairro
+ * Classe que representa a entidade Bairro
  *
  * @author LeonardoJasmim
  */
