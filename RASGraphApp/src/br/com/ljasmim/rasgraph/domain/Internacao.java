@@ -2,6 +2,7 @@ package br.com.ljasmim.rasgraph.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -25,11 +26,13 @@ public class Internacao implements Serializable {
     private String dataInternacao;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "solicitante_id")
+    @JoinColumn(name = "unidadesaude_id")
+    @Column (name = "unid_solic_id")
     private UnidadeSaude unidadeSolicitante;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "destino_id")
+    @JoinColumn(name = "unidadesaude_id")
+    @Column (name = "unid_dest_id")
     private UnidadeSaude unidadeDestino;
 
     @ManyToOne(fetch = FetchType.LAZY)
