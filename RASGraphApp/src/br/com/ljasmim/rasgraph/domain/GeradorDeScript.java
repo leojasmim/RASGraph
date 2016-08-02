@@ -1,4 +1,4 @@
-package br.com.ljasmim.rasgraph.registro;
+package br.com.ljasmim.rasgraph.domain;
 
 import java.io.BufferedWriter;
 import java.io.File;

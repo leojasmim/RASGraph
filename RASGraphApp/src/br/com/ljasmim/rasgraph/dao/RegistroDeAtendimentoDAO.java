@@ -1,7 +1,7 @@
 package br.com.ljasmim.rasgraph.dao;
 
 import br.com.ljasmim.rasgraph.connection.RepositoryBaseJPA;
-import br.com.ljasmim.rasgraph.registro.RegistroDeAtendimento;
+import br.com.ljasmim.rasgraph.domain.RegistroDeAtendimento;
 import java.util.List;
 
 /**

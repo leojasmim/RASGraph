@@ -1,7 +1,7 @@
 package br.com.ljasmim.rasgraph.dao.test;
 
 import br.com.ljasmim.rasgraph.dao.RegistroDeAtendimentoDAO;
-import br.com.ljasmim.rasgraph.registro.RegistroDeAtendimento;
+import br.com.ljasmim.rasgraph.domain.RegistroDeAtendimento;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
