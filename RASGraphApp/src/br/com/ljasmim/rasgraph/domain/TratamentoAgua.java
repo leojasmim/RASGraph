@@ -21,7 +21,7 @@ public class TratamentoAgua implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "tipo")
+    @Column(name = "descricao")
     private String descricao;
 
     public TratamentoAgua() {

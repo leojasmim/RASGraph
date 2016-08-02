@@ -9,12 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe que representa o tipo de habitação no qual se enquadra a residência
+ * Classe que representa o tipo abastecimento de agua recebido pela residência
  *
  * @author LeonardoJasmim
  */
 @Entity
-public class TipoHabitacao implements Serializable {
+public class AbastecimentoAgua implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class TipoHabitacao implements Serializable {
     @Column(name = "descricao")
     private String descricao;
 
-    public TipoHabitacao() {
+    public AbastecimentoAgua() {
     }
 
-    public TipoHabitacao(long id, String descricao) {
+    public AbastecimentoAgua(long id, String descricao) {
         this.id = id;
         this.descricao = descricao;
     }
@@ -49,9 +49,9 @@ public class TipoHabitacao implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 79 * hash + Objects.hashCode(this.descricao);
+        int hash = 7;
+        hash = 19 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 19 * hash + Objects.hashCode(this.descricao);
         return hash;
     }
 
@@ -63,7 +63,7 @@ public class TipoHabitacao implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TipoHabitacao other = (TipoHabitacao) obj;
+        final AbastecimentoAgua other = (AbastecimentoAgua) obj;
         if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
@@ -72,7 +72,7 @@ public class TipoHabitacao implements Serializable {
 
     @Override
     public String toString() {
-        return "TipoHabitacao{" + "descricao=" + descricao + '}';
+        return "AbastecimentoAgua{" + "id=" + id + ", descricao=" + descricao + '}';
     }
-       
+
 }
