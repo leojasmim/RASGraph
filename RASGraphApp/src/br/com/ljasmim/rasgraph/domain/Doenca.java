@@ -81,7 +81,9 @@ public class Doenca implements Serializable {
 
     @Override
     public String toString() {
-        return "Doenca{" + "codigoCID=" + codigoCID + ", descricao=" + descricao + '}';
+        return "Doenca{" + "id=" + id + ", codigoCID=" + codigoCID + ", descricao=" + descricao + '}';
     }
+
+    
 
 }

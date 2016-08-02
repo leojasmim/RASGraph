@@ -82,7 +82,6 @@ public class TipoUnidade implements Serializable {
 
     @Override
     public String toString() {
-        return "TipoUnidade{" + "codigo=" + codigo + ", descricao=" + descricao + '}';
+        return "TipoUnidade{" + "id=" + id + ", codigo=" + codigo + ", descricao=" + descricao + '}';
     }
-
 }

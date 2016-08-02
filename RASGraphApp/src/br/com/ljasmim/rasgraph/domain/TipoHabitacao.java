@@ -72,7 +72,7 @@ public class TipoHabitacao implements Serializable {
 
     @Override
     public String toString() {
-        return "TipoHabitacao{" + "descricao=" + descricao + '}';
+        return "TipoHabitacao{" + "id=" + id + ", descricao=" + descricao + '}';
     }
-       
+      
 }

@@ -99,7 +99,7 @@ public class Procedimento implements Serializable {
 
     @Override
     public String toString() {
-        return "Procedimento{" + "codigo=" + codigo + ", descricao=" + descricao + '}';
+        return "Procedimento{" + "id=" + id + ", codigo=" + codigo + ", descricao=" + descricao + '}';
     }
 
 }

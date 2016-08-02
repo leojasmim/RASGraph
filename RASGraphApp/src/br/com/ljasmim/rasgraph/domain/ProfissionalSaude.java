@@ -82,6 +82,8 @@ public class ProfissionalSaude implements Serializable {
 
     @Override
     public String toString() {
-        return "ProfissionalSaude{" + "codigoCbo=" + codigoCbo + ", descricao=" + descricao + '}';
+        return "ProfissionalSaude{" + "id=" + id + ", codigoCbo=" + codigoCbo + ", descricao=" + descricao + '}';
     }
+
+    
 }

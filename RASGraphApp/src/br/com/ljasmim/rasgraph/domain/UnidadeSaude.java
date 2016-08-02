@@ -101,7 +101,7 @@ public class UnidadeSaude implements Serializable {
 
     @Override
     public String toString() {
-        return "UnidadeSaude{" + "codigoCnes=" + codigoCnes + ", nome=" + nome + '}';
+        return "UnidadeSaude{" + "id=" + id + ", codigoCnes=" + codigoCnes + '}';
     }
 
 }
