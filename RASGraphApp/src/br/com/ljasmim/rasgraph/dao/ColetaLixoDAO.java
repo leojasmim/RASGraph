@@ -18,7 +18,7 @@ public class ColetaLixoDAO extends RepositoryBaseJPA<ColetaLixo, Long> {
     public ColetaLixo find(ColetaLixo coleta) {
         try {
             return (ColetaLixo) getEntityManager().createQuery("Select c from ColetaLixo AS c "
-                    + "where c.destino like '" + coleta.getDestino() + "'").getSingleResult();
+                    + "where c.descricao like '" + coleta.getDescricao() + "'").getSingleResult();
         } catch (Exception e) {
             return null;
         }

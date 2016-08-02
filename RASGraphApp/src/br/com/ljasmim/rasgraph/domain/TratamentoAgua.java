@@ -9,12 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe que representa o tipo de coleta de lixo realizada na residência
+ * Classe que representa o tratamento de agua para consumo realizado na
+ * residência
  *
  * @author LeonardoJasmim
  */
 @Entity
-public class ColetaLixo implements Serializable {
+public class TratamentoAgua implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +24,12 @@ public class ColetaLixo implements Serializable {
     @Column(name = "descricao", unique = true)
     private String descricao;
 
-    public ColetaLixo(long id, String destino) {
-        this.id = id;
-        this.descricao = destino;
+    public TratamentoAgua() {
     }
 
-    public ColetaLixo() {
+    public TratamentoAgua(long id, String tipo) {
+        this.id = id;
+        this.descricao = tipo;
     }
 
     public long getId() {
@@ -49,9 +50,9 @@ public class ColetaLixo implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 19 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 19 * hash + Objects.hashCode(this.descricao);
+        int hash = 7;
+        hash = 73 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 73 * hash + Objects.hashCode(this.descricao);
         return hash;
     }
 
@@ -63,7 +64,7 @@ public class ColetaLixo implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ColetaLixo other = (ColetaLixo) obj;
+        final TratamentoAgua other = (TratamentoAgua) obj;
         if (!Objects.equals(this.descricao, other.descricao)) {
             return false;
         }
@@ -72,6 +73,7 @@ public class ColetaLixo implements Serializable {
 
     @Override
     public String toString() {
-        return "ColetaLixo{" + "id=" + id + ", descricao=" + descricao + '}';
+        return "TratamentoAgua{" + "id=" + id + ", decricao=" + descricao + '}';
     }
+
 }

@@ -29,22 +29,22 @@ public class ColetaLixoTest {
     @Test
     public void testSave() {
         coleta = new ColetaLixo();
-        coleta.setDestino("COLETALIXO_01");
+        coleta.setDescricao("COLETALIXO_01");
         coleta = coletaDAO.save(coleta);
         assertTrue(coleta != null);
 
         coleta = new ColetaLixo();
-        coleta.setDestino("COLETALIXO_02");
+        coleta.setDescricao("COLETALIXO_02");
         coleta = coletaDAO.save(coleta);
         assertTrue(coleta != null);
         
         coleta = new ColetaLixo();
-        coleta.setDestino("COLETALIXO_03");
+        coleta.setDescricao("COLETALIXO_03");
         coleta = coletaDAO.save(coleta);
         assertTrue(coleta != null);
         
         coleta = new ColetaLixo();
-        coleta.setDestino("COLETALIXO_03");
+        coleta.setDescricao("COLETALIXO_03");
         coleta = coletaDAO.save(coleta);
         assertTrue(coleta == null);
     }
@@ -69,11 +69,11 @@ public class ColetaLixoTest {
     @Test
     public void testFind(){
         coleta = new ColetaLixo();
-        coleta.setDestino("COLETALIXO_01");       
+        coleta.setDescricao("COLETALIXO_01");       
         assertTrue(coletaDAO.find(coleta) != null);
         
         coleta = new ColetaLixo();
-        coleta.setDestino("COLETALIXO_04");       
+        coleta.setDescricao("COLETALIXO_04");       
         assertTrue(coletaDAO.find(coleta) == null);
         
     }
