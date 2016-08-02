@@ -72,5 +72,5 @@ public class MeioTransporte implements Serializable {
     public String toString() {
         return "MeioTransporte{" + "id=" + id + ", descricao=" + descricao + '}';
     }
-
+    
 }
