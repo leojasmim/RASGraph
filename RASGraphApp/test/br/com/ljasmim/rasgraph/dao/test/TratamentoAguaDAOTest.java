@@ -13,13 +13,13 @@ import org.junit.Before;
  *
  * @author LeonardoJasmim
  */
-public class TratamentoAguaTest {
+public class TratamentoAguaDAOTest {
 
     TratamentoAgua tratamentoAgua;
     TratamentoAguaDAO tratamentoAguaDAO;
     List<TratamentoAgua> tratamentosAgua;
 
-    public TratamentoAguaTest() {
+    public TratamentoAguaDAOTest() {
     }
 
     @Before

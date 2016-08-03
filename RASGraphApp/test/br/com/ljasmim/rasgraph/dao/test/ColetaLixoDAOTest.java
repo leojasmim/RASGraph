@@ -12,13 +12,13 @@ import org.junit.Before;
  *
  * @author LeonardoJasmim
  */
-public class ColetaLixoTest {
+public class ColetaLixoDAOTest {
 
     ColetaLixo coleta;
     ColetaLixoDAO coletaDAO;
     List<ColetaLixo> coletas;
 
-    public ColetaLixoTest() {
+    public ColetaLixoDAOTest() {
     }
 
     @Before

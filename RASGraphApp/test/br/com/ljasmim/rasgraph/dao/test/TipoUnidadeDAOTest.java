@@ -11,12 +11,12 @@ import org.junit.Before;
  *
  * @author LeonardoJasmim
  */
-public class TipoUnidadeTest {
+public class TipoUnidadeDAOTest {
 
     TipoUnidade tipo;
     TipoUnidadeDAO tipoDAO;
 
-    public TipoUnidadeTest() {
+    public TipoUnidadeDAOTest() {
     }
 
     @Before

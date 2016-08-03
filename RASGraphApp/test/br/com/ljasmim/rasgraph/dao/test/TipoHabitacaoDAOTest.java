@@ -12,13 +12,13 @@ import org.junit.Before;
  *
  * @author LeonardoJasmim
  */
-public class TipoHabitacaoTest {
+public class TipoHabitacaoDAOTest {
 
     TipoHabitacao tipoHab;
     TipoHabitacaoDAO tipoHabDAO;
     List<TipoHabitacao> tiposHab;
 
-    public TipoHabitacaoTest() {
+    public TipoHabitacaoDAOTest() {
     }
 
     @Before

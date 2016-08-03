@@ -12,13 +12,13 @@ import org.junit.Before;
  *
  * @author LeonardoJasmim
  */
-public class EsgotamentoTest {
+public class EsgotamentoDAOTest {
 
     Esgotamento esgotamento;
     EsgotamentoDAO esgotamentoDAO;
     List<Esgotamento> esgotamentos;
 
-    public EsgotamentoTest() {
+    public EsgotamentoDAOTest() {
     }
 
     @Before

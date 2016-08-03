@@ -11,13 +11,13 @@ import org.junit.Before;
  * Teste de persistência da classe GrupoComunitario
  * @author LeonardoJasmim
  */
-public class GrupoComunitarioTest {
+public class GrupoComunitarioDAOTest {
     
     GrupoComunitario grupo;
     GrupoComunitarioDAO grupoDAO;
     List<GrupoComunitario> grupos;
     
-    public GrupoComunitarioTest() {
+    public GrupoComunitarioDAOTest() {
     }
 
     @Before
