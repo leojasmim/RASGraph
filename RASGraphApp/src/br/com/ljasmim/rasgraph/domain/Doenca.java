@@ -88,6 +88,4 @@ public class Doenca implements Serializable {
         return "Doenca{" + "id=" + id + ", CID=" + cid + ", descricao=" + descricao + '}';
     }
 
-    
-
 }

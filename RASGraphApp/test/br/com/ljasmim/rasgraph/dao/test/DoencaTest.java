@@ -9,48 +9,82 @@ import org.junit.Before;
 
 /**
  * Teste de persistência da Classe DoencaDAO
+ *
  * @author LeonardoJasmim
  */
 public class DoencaTest {
 
     Doenca doenca;
     DoencaDAO doencaDAO;
-    List<Doenca> doeancas;
-    
+    List<Doenca> doencas;
+
     public DoencaTest() {
     }
 
     @Before
-    public void SetUp(){
+    public void SetUp() {
         doencaDAO = new DoencaDAO();
     }
-    
+
     @Test
-    public void testSave(){
+    public void testSave() {
         doenca = new Doenca();
         doenca.setCid("A01");
         doenca.setDescricao("DOENCA_01");
         doenca = doencaDAO.save(doenca);
         assertTrue(doenca != null);
-        
+
         doenca = new Doenca();
-        
+        doenca.setCid("A01");
         doenca.setDescricao("DOENCA_02");
         doenca = doencaDAO.save(doenca);
         assertTrue(doenca != null);
-        
+
         doenca = new Doenca();
-        doenca.setCid("A01");
-        
+        doenca.setCid("A02");
+        doenca.setDescricao("DOENCA_01");
         doenca = doencaDAO.save(doenca);
         assertTrue(doenca != null);
-        
+
         doenca = new Doenca();
-        doenca.setCid("A01");
-        doenca.setDescricao("DOENCA_03");
+        doenca.setCid("A02");
+        doenca.setDescricao("DOENCA_02");
+        doenca = doencaDAO.save(doenca);
+        assertTrue(doenca != null);
+
+        doenca = new Doenca();
+        doenca.setCid("A02");
+        doenca.setDescricao("DOENCA_02");
         doenca = doencaDAO.save(doenca);
         assertTrue(doenca == null);
     }
-    
+
+    @Test
+    public void testRemove() {
+        doenca = doencaDAO.getByID(4L);
+        if (doenca != null) {
+            doencaDAO.remove(doenca);
+        }
+        doenca = doencaDAO.getByID(4L);
+        assertTrue(doenca == null);
+    }
+
+    @Test
+    public void testGetAllAndCount() {
+        assertTrue(doencaDAO.getAll().size() == doencaDAO.getCount());
+        assertTrue(doencaDAO.getCount() == 3);
+    }
+
+    @Test
+    public void testFind() {
+        doenca = new Doenca();
+        doenca.setCid("A01");
+        doenca.setDescricao("DOENCA_03");
+        assertTrue(doencaDAO.find(doenca) == null);
+        
+        doenca.setDescricao("DOENCA_01");
+        assertTrue(doencaDAO.find(doenca) != null);
+        assertTrue(doencaDAO.find(doenca).getId() == 1);
+    }
 
 }

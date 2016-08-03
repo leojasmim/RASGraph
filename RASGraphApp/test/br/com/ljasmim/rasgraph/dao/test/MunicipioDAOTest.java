@@ -46,7 +46,7 @@ public class MunicipioDAOTest {
         municipio = new Municipio();
         municipio.setNome("MUNICIPIO_03");
         municipio = municipioDAO.save(municipio);
-        assertTrue(municipio == null);
+        assertTrue(municipio == null);    
     }
     
     @Test
