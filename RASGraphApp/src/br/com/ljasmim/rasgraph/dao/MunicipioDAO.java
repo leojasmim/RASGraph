@@ -18,7 +18,7 @@ public class MunicipioDAO extends RepositoryBaseJPA<Municipio, Long> {
     public Municipio find(Municipio municipio) {
         try {
             return (Municipio) getEntityManager().createQuery("Select m from Municipio AS m "
-                + "where m.nome like '" + municipio.getNome() + "'").getSingleResult();
+                    + "where m.nome like '" + municipio.getNome() + "'").getSingleResult();
         } catch (Exception e) {
             return null;
         }

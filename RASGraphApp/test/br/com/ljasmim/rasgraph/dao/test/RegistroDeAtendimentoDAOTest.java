@@ -55,7 +55,7 @@ public class RegistroDeAtendimentoDAOTest {
     @Test
     public void testGetAll() {
         List<RegistroDeAtendimento> registros = registroDAO.getAll();
-        long n = registroDAO.getCount();
+        long n = registroDAO.count();
         assertTrue(registros.size() == n);
         System.out.println(n);
     }
@@ -63,7 +63,7 @@ public class RegistroDeAtendimentoDAOTest {
     @Test
     public void testAcessoAosRegistros() {
         long i = registroDAO.getFirst().getId();
-        long n = i + registroDAO.getCount();
+        long n = i + registroDAO.count();
         
         for (; i <= n; i++) {
             registro = registroDAO.getByID(i);

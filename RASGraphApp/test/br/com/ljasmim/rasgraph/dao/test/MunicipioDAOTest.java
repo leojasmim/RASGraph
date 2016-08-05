@@ -46,7 +46,7 @@ public class MunicipioDAOTest {
         municipio = new Municipio();
         municipio.setNome("MUNICIPIO_03");
         municipio = municipioDAO.save(municipio);
-        assertTrue(municipio == null);
+        assertTrue(municipio == null);    
     }
     
     @Test
@@ -61,7 +61,7 @@ public class MunicipioDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count =  municipioDAO.getCount();
+        long count =  municipioDAO.count();
         municipios = municipioDAO.getAll();
         assertTrue(municipios.size() == count);
     }
@@ -72,10 +72,10 @@ public class MunicipioDAOTest {
         municipio.setNome("MUNICIPIO_04");
         municipio = municipioDAO.find(municipio);
         assertTrue(municipio == null);
-     
+        
         municipio = new Municipio();
         municipio.setNome("MUNICIPIO_01");
         municipio = municipioDAO.find(municipio);
-        assertTrue(municipio.getId() == 1L);
+        assertTrue(municipio != null);                
     }
 }
