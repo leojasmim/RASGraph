@@ -58,7 +58,7 @@ public class MeioComunicacaoDAOTest {
     
     @Test
     public void testGetAllAndCount() {
-        long count = meioComunicacaoDAO.getCount();
+        long count = meioComunicacaoDAO.count();
         meiosComunicacao = meioComunicacaoDAO.getAll();
         assertTrue(meiosComunicacao.size() == count);
         assertTrue(count == 2);

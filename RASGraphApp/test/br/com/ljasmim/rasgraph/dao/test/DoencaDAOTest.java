@@ -71,8 +71,8 @@ public class DoencaDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        assertTrue(doencaDAO.getAll().size() == doencaDAO.getCount());
-        assertTrue(doencaDAO.getCount() == 3);
+        assertTrue(doencaDAO.getAll().size() == doencaDAO.count());
+        assertTrue(doencaDAO.count() == 3);
     }
 
     @Test

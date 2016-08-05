@@ -62,7 +62,7 @@ public class TratamentoAguaDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        long count = tratamentoAguaDAO.getCount();
+        long count = tratamentoAguaDAO.count();
         tratamentosAgua = tratamentoAguaDAO.getAll();
         assertTrue(tratamentosAgua.size() == count);
         assertTrue(count == 2);

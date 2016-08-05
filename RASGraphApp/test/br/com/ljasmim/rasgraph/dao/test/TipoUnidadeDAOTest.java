@@ -63,8 +63,8 @@ public class TipoUnidadeDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        assertTrue(tipoDAO.getCount() == tipoDAO.getAll().size());
-        assertTrue(tipoDAO.getCount() == 2);
+        assertTrue(tipoDAO.count() == tipoDAO.getAll().size());
+        assertTrue(tipoDAO.count() == 2);
     }
 
     @Test

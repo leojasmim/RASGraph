@@ -58,7 +58,7 @@ public class PerfilSaudeDAOTest {
     
     @Test
     public void testGetAllAndCount() {
-        long count = perfilDAO.getCount();
+        long count = perfilDAO.count();
         perfis = perfilDAO.getAll();
         assertTrue(perfis.size() == count);
         assertTrue(count == 2);

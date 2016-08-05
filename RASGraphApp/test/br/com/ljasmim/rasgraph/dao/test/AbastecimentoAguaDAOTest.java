@@ -59,7 +59,7 @@ public class AbastecimentoAguaDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        long count = abastecimentoDAO.getCount();
+        long count = abastecimentoDAO.count();
         abastecimentos = abastecimentoDAO.getAll();
         assertTrue(abastecimentos.size() == count);
         assertTrue(count == 2);

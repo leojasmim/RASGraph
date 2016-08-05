@@ -57,7 +57,7 @@ public class GrupoComunitarioDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count = grupoDAO.getCount();
+        long count = grupoDAO.count();
         grupos = grupoDAO.getAll();
         assertTrue(grupos.size() == count);
         assertTrue(count == 2);

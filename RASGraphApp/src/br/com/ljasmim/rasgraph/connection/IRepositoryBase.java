@@ -58,6 +58,6 @@ public interface IRepositoryBase< T, PK extends Serializable> {
      *
      * @return Número de objetos
      */
-    public Long getCount();
+    public Long count();
 
 }

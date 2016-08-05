@@ -58,7 +58,7 @@ public class EsgotamentoDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count = esgotamentoDAO.getCount();
+        long count = esgotamentoDAO.count();
         esgotamentos = esgotamentoDAO.getAll();
         assertTrue(esgotamentos.size() ==  count);
         assertTrue(count == 2);

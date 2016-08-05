@@ -58,7 +58,7 @@ public class EspecialidadeDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count = especialidadeDAO.getCount();
+        long count = especialidadeDAO.count();
         especialidades = especialidadeDAO.getAll();
         assertTrue(especialidades.size() == count);
         assertTrue(count == 2);

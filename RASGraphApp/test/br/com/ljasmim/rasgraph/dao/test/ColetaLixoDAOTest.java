@@ -61,7 +61,7 @@ public class ColetaLixoDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count = coletaDAO.getCount();
+        long count = coletaDAO.count();
         coletas = coletaDAO.getAll();
         assertTrue(coletas.size() == count);
     }

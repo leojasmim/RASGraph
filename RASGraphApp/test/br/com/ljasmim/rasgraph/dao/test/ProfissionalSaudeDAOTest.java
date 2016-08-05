@@ -60,8 +60,8 @@ public class ProfissionalSaudeDAOTest {
 
     @Test
     public void testGetAllAndCount(){
-        assertTrue(profSaudeDAO.getCount() == profSaudeDAO.getAll().size());
-        assertTrue(profSaudeDAO.getCount() == 2);
+        assertTrue(profSaudeDAO.count() == profSaudeDAO.getAll().size());
+        assertTrue(profSaudeDAO.count() == 2);
     }
     
     @Test

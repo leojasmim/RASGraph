@@ -58,7 +58,7 @@ public class TipoHabitacaoDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        long count = tipoHabDAO.getCount();
+        long count = tipoHabDAO.count();
         tiposHab = tipoHabDAO.getAll();
         assertTrue(tiposHab.size() == count);
         assertTrue(count == 2);

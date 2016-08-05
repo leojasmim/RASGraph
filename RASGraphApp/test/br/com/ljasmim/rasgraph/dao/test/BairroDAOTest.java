@@ -79,7 +79,7 @@ public class BairroDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        long count = bairroDAO.getCount();
+        long count = bairroDAO.count();
         bairros = bairroDAO.getAll();
         assertTrue(bairros.size() == count);
     }

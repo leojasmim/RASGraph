@@ -61,7 +61,7 @@ public class MunicipioDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count =  municipioDAO.getCount();
+        long count =  municipioDAO.count();
         municipios = municipioDAO.getAll();
         assertTrue(municipios.size() == count);
     }

@@ -75,7 +75,7 @@ public class RepositoryBaseJPA< T, PK extends Serializable> implements IReposito
     }
 
     @Override
-    public Long getCount() {
+    public Long count() {
         TypedQuery<Long> query = getEntityManager().createQuery("Select count(o) from " + entityClass.getSimpleName() + " o", Long.class);
         return query.getSingleResult();
     }

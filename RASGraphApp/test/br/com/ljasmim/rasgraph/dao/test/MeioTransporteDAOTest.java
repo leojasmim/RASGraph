@@ -58,7 +58,7 @@ public class MeioTransporteDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        long count = meioTransporteDAO.getCount();
+        long count = meioTransporteDAO.count();
         meiosTransporte = meioTransporteDAO.getAll();
         assertTrue(meiosTransporte.size() == count);
         assertTrue(count == 2);
