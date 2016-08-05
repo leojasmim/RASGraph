@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 /**
- *
+ * Teste da classe de persistência ResidenciaDAO
  * @author LeonardoJasmim
  */
 public class ResidenciaDAOTest {
