@@ -20,9 +20,10 @@ public class Procedimento implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String codigo;
-
+    
+    @Column(unique = true, nullable = false)
     private String descricao;
 
     public Procedimento() {

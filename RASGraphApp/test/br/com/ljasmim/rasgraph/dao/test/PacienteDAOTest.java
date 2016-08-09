@@ -106,6 +106,12 @@ public class PacienteDAOTest {
         paciente = pacienteDAO.save(paciente);
         assertTrue(paciente != null);
         count++;
+        
+        paciente = new Paciente();
+        paciente.setCodigo(count);
+        paciente = pacienteDAO.save(paciente);
+        assertTrue(paciente != null);
+        count++;
     }
 
     @Test
@@ -123,7 +129,7 @@ public class PacienteDAOTest {
     @Test
     public void testGetAllAndCount() {
         assertTrue(pacienteDAO.count() == pacienteDAO.getAll().size());
-        assertTrue(pacienteDAO.count() == 3);
+        assertTrue(pacienteDAO.count() == 4);
     }
 
     @Test

@@ -223,10 +223,11 @@ ALTER TABLE paciente OWNER TO postgres;
 DROP TABLE IF EXISTS procedimento CASCADE;
 CREATE TABLE procedimento(
   id bigserial NOT NULL,
-  codigo character varying(255),
-  descricao character varying(255),
+  codigo character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT procedimento_pkey PRIMARY KEY (id),
-  CONSTRAINT uk_kk6rwjftubpqd1g14ean2aq7v UNIQUE (codigo)
+  CONSTRAINT uk_kk6rwjftubpqd1g14ean2aq7v UNIQUE (codigo),
+  CONSTRAINT uk_osvrmhpno2lxfyp0bb8q2ilec UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
 ALTER TABLE procedimento OWNER TO postgres;
 
