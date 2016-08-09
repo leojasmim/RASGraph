@@ -33,7 +33,6 @@ public class BairroDAOTest {
 
     @Test
     public void testSave() {
-
         municipio = municipioDAO.getByID(1L);
         bairro = new Bairro();
         bairro.setMunicipio(municipio);
@@ -65,6 +64,10 @@ public class BairroDAOTest {
         bairro.setNome("BAIRRO_03");
         bairro = bairroDAO.save(bairro);
         assertTrue(bairro != null);
+        
+        bairro = new Bairro();
+        bairro = bairroDAO.save(bairro);
+        assertTrue(bairro == null);
     }
 
     @Test
@@ -98,5 +101,9 @@ public class BairroDAOTest {
         
         bairro = bairroDAO.find(bairro);
         assertTrue(bairro != null);
+        
+        bairro = new Bairro();
+        bairro = bairroDAO.find(bairro);
+        assertTrue(bairro == null);
     }
 }
