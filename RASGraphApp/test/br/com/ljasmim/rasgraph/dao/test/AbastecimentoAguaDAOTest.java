@@ -3,7 +3,6 @@ package br.com.ljasmim.rasgraph.dao.test;
 import br.com.ljasmim.rasgraph.dao.AbastecimentoAguaDAO;
 import br.com.ljasmim.rasgraph.domain.AbastecimentoAgua;
 import java.util.List;
-import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -41,8 +40,13 @@ public class AbastecimentoAguaDAOTest {
         abastecimento.setDescricao("ABAST_03");
         abastecimento = abastecimentoDAO.save(abastecimento);
         assertTrue(abastecimento != null);
+
         abastecimento = new AbastecimentoAgua();
         abastecimento.setDescricao("ABAST_03");
+        abastecimento = abastecimentoDAO.save(abastecimento);
+        assertTrue(abastecimento == null);
+
+        abastecimento = new AbastecimentoAgua();
         abastecimento = abastecimentoDAO.save(abastecimento);
         assertTrue(abastecimento == null);
     }
@@ -74,6 +78,8 @@ public class AbastecimentoAguaDAOTest {
         abastecimento.setDescricao("ABAST_01");
         assertTrue(abastecimentoDAO.find(abastecimento) != null);
         assertTrue(abastecimentoDAO.find(abastecimento).getId() == 1);
-    }
 
+        abastecimento = new AbastecimentoAgua();
+        assertTrue(abastecimentoDAO.find(abastecimento) == null);
+    }
 }

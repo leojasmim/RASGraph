@@ -23,112 +23,112 @@ public class RegistroDeAtendimento implements Serializable {
 
     @Column(name = "dt_atend")
     private String dataAtendimento;
-    
+
     @Column(name = "dt_nasc")
     private String dataNascimento;
-    
+
     @Column(name = "sexo")
     private String sexo;
-    
+
     @Column(name = "tipounid_cod")
     private String tipoUnidadeCodigo;
 
     @Column(name = "tipounid_desc")
     private String tipoUnidadeDescricao;
-    
+
     @Column(name = "unid_cod")
     private String unidadeCodigo;
-    
+
     @Column(name = "unid_desc")
     private String unidadeDescricao;
-    
+
     @Column(name = "proc_cod")
     private String procedimentoCodigo;
-    
+
     @Column(name = "proc_desc")
     private String procedimentoDescricao;
-    
+
     @Column(name = "cbo_cod")
     private String cboCodigo;
-    
+
     @Column(name = "cbo_desc")
     private String cboDescricao;
-    
+
     @Column(name = "cid_cod")
     private String cidCodigo;
-    
+
     @Column(name = "cid_desc")
     private String cidDescricao;
-    
+
     @Column(name = "sol_exame")
     private String solicitacaoExame;
-    
+
     @Column(name = "qtdmed_presc")
     private String qtdMedicacaoPrescrita;
-    
+
     @Column(name = "qtdmed_disp")
     private String qtdMedicacaoDispensada;
-    
+
     @Column(name = "qtdmed_npadrao")
     private String qtdMedicacaoNaoPadronizada;
-    
+
     @Column(name = "enc_esp")
     private String encaminhadoAoEspecialista;
-    
+
     @Column(name = "area_atuacao")
     private String areaAtuacaoEspecialista;
-    
+
     @Column(name = "enc_inter")
     private String encaminhadoParaIntenacao;
-    
+
     @Column(name = "dt_inter")
     private String dataInternacao;
-    
+
     @Column(name = "unid_sol_inter")
     private String unidadeSolicitanteInternacao;
-    
+
     @Column(name = "unid_dest_inter")
     private String unidadeDestinoInternacao;
-    
+
     @Column(name = "cid_inter")
     private String cidInternacao;
-    
+
     @Column(name = "trat_agua")
     private String tratamentoAgua;
-    
+
     @Column(name = "abast_agua")
     private String abastecimentoAgua;
-    
+
     @Column(name = "energia")
     private String energiaEletrica;
-    
+
     @Column(name = "tipo_hab")
     private String tipoHabitacao;
-    
+
     @Column(name = "dest_lixo")
     private String destinoLixo;
-    
+
     @Column(name = "fezes_urina")
     private String fezesUrina;
-    
+
     @Column(name = "comodos")
     private String comodos;
-    
+
     @Column(name = "caso_doenca")
     private String emCasoDoenca;
-    
+
     @Column(name = "grupo_comun")
     private String grupoComunitario;
-    
+
     @Column(name = "meio_comun")
     private String meioComunicacao;
-    
+
     @Column(name = "meio_transp")
     private String meioTransporte;
-    
+
     @Column(name = "municipio")
     private String municipio;
-    
+
     @Column(name = "bairro")
     private String bairro;
 
@@ -490,5 +490,10 @@ public class RegistroDeAtendimento implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "RegistroDeAtendimento{" + "id=" + id + ", dataAtendimento=" + dataAtendimento + '}';
     }
 }

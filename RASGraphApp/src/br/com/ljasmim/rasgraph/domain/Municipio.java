@@ -20,7 +20,7 @@ public class Municipio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nome", unique = true)
+    @Column(name = "nome", unique = true, nullable = false)
     private String nome;
 
     public Municipio() {

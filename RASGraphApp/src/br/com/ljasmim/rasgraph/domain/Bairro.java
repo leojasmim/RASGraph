@@ -27,7 +27,7 @@ public class Bairro implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     private String nome;
 
     @ManyToOne(fetch = FetchType.LAZY)

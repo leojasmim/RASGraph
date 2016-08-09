@@ -25,9 +25,9 @@ public class EspecialidadeDAOTest {
     public void setUp() {
         especialidadeDAO = new EspecialidadeDAO();
     }
-    
+
     @Test
-    public void testSave(){
+    public void testSave() {
         especialidade = new Especialidade();
         especialidade.setArea("AREA_01");
         especialidade = especialidadeDAO.save(especialidade);
@@ -44,33 +44,38 @@ public class EspecialidadeDAOTest {
         especialidade.setArea("AREA_03");
         especialidade = especialidadeDAO.save(especialidade);
         assertTrue(especialidade == null);
+        especialidade = new Especialidade();
+        especialidade = especialidadeDAO.save(especialidade);
+        assertTrue(especialidade == null);
     }
-    
+
     @Test
-    public void testRemove(){
+    public void testRemove() {
         especialidade = especialidadeDAO.getByID(3L);
-        if (especialidade != null){
+        if (especialidade != null) {
             especialidadeDAO.remove(especialidade);
         }
         especialidade = especialidadeDAO.getByID(3L);
         assertTrue(especialidade == null);
     }
-    
+
     @Test
-    public void testGetAllAndCount(){
+    public void testGetAllAndCount() {
         long count = especialidadeDAO.count();
         especialidades = especialidadeDAO.getAll();
         assertTrue(especialidades.size() == count);
         assertTrue(count == 2);
     }
-    
+
     @Test
-    public void testFind(){
+    public void testFind() {
         especialidade = new Especialidade();
         especialidade.setArea("AREA_05");
         assertTrue(especialidadeDAO.find(especialidade) == null);
         especialidade.setArea("AREA_01");
         assertTrue(especialidadeDAO.find(especialidade) != null);
         assertTrue(especialidadeDAO.find(especialidade).getId() == 1);
+        especialidade = new Especialidade();
+        assertTrue(especialidadeDAO.find(especialidade) == null);
     }
 }

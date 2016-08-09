@@ -18,8 +18,7 @@ public class UnidadeSaudeDAO extends RepositoryBaseJPA<UnidadeSaude, Long> {
     public UnidadeSaude find(UnidadeSaude unidade) {
         try {
             return (UnidadeSaude) getEntityManager().createQuery("SELECT u FROM UnidadeSaude AS u "
-                    + "WHERE u.nome like '" + unidade.getNome() + "' AND "
-                    + "u.cnes like '" + unidade.getCnes() + "'").getSingleResult();
+                    + "WHERE u.nome like '" + unidade.getNome() + "'").getSingleResult();
         } catch (Exception e) {
             return null;
         }

@@ -2,6 +2,7 @@ package br.com.ljasmim.rasgraph.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,10 @@ public class Doenca implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false)
     private String cid;
-
+    
+    @Column(nullable = false)
     private String descricao;
 
     public Doenca() {

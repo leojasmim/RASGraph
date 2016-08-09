@@ -57,7 +57,7 @@ ALTER TABLE registrodeatendimento OWNER TO postgres;
 DROP TABLE IF EXISTS municipio CASCADE;
 CREATE TABLE municipio(
   id bigserial NOT NULL,
-  nome character varying(255),
+  nome character varying(255) NOT NULL,
   CONSTRAINT municipio_pkey PRIMARY KEY (id),
   CONSTRAINT uk_pas4awibw1tkx1cg5ga055gmm UNIQUE (nome)
 )WITH(OIDS=FALSE);
@@ -66,7 +66,7 @@ ALTER TABLE municipio OWNER TO postgres;
 DROP TABLE IF EXISTS bairro CASCADE;
 CREATE TABLE bairro(
   id bigserial NOT NULL,
-  nome character varying(255),
+  nome character varying(255) NOT NULL,
   municipio_id bigint,
   CONSTRAINT bairro_pkey PRIMARY KEY (id),
   CONSTRAINT fk_3rys0fdylc9is4dk0cem4ssu5 FOREIGN KEY (municipio_id)
@@ -79,7 +79,7 @@ ALTER TABLE bairro OWNER TO postgres;
 DROP TABLE IF EXISTS coletalixo CASCADE;
 CREATE TABLE coletalixo(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT coletalixo_pkey PRIMARY KEY (id),
   CONSTRAINT uk_sfi7vy5cg6gva0ymn420vp4d6 UNIQUE (descricao)
 )WITH(OIDS=FALSE);
@@ -88,7 +88,7 @@ ALTER TABLE coletalixo OWNER TO postgres;
 DROP TABLE IF EXISTS tratamentoagua CASCADE;
 CREATE TABLE tratamentoagua(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT tratamentoagua_pkey PRIMARY KEY (id),
   CONSTRAINT uk_3sncvj4urmktw07fg7p112323 UNIQUE (descricao)
 )WITH(OIDS=FALSE);
@@ -97,7 +97,7 @@ ALTER TABLE tratamentoagua OWNER TO postgres;
 DROP TABLE IF EXISTS tipohabitacao CASCADE;
 CREATE TABLE tipohabitacao(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT tipohabitacao_pkey PRIMARY KEY (id),
   CONSTRAINT uk_862iajp0vxk323bqf8muwyoc2 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -106,7 +106,7 @@ ALTER TABLE tipohabitacao OWNER TO postgres;
 DROP TABLE IF EXISTS abastecimentoagua CASCADE;
 CREATE TABLE abastecimentoagua(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT abastecimentoagua_pkey PRIMARY KEY (id),
   CONSTRAINT uk_i7j9gd3cnhy9sjy7h7qlwt2h7 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -115,7 +115,7 @@ ALTER TABLE abastecimentoagua OWNER TO postgres;
 DROP TABLE IF EXISTS esgotamento CASCADE;
 CREATE TABLE esgotamento(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT esgotamento_pkey PRIMARY KEY (id),
   CONSTRAINT uk_tbfu8k6k5ojyjpworvvs7hety UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -157,7 +157,7 @@ ALTER TABLE residencia OWNER TO postgres;
 DROP TABLE IF EXISTS grupocomunitario CASCADE;
 CREATE TABLE grupocomunitario(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT grupocomunitario_pkey PRIMARY KEY (id),
   CONSTRAINT uk_mk4mkg6spk3r92a8eo9bi49k8 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -166,7 +166,7 @@ ALTER TABLE grupocomunitario OWNER TO postgres;
 DROP TABLE IF EXISTS meiocomunicacao CASCADE;
 CREATE TABLE meiocomunicacao(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT meiocomunicacao_pkey PRIMARY KEY (id),
   CONSTRAINT uk_p1ryiat6s30iybwupel2uxa3e UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -175,7 +175,7 @@ ALTER TABLE meiocomunicacao OWNER TO postgres;
 DROP TABLE IF EXISTS meiotransporte CASCADE;
 CREATE TABLE meiotransporte(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT meiotransporte_pkey PRIMARY KEY (id),
   CONSTRAINT uk_dgivqfpxpqya7lejafxc8xgdu UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -184,7 +184,7 @@ ALTER TABLE meiotransporte OWNER TO postgres;
 DROP TABLE IF EXISTS perfilsaude CASCADE;
 CREATE TABLE perfilsaude(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT perfilsaude_pkey PRIMARY KEY (id),
   CONSTRAINT uk_bg6xmx1imtwe3s5skjkwx3400 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
@@ -223,18 +223,19 @@ ALTER TABLE paciente OWNER TO postgres;
 DROP TABLE IF EXISTS procedimento CASCADE;
 CREATE TABLE procedimento(
   id bigserial NOT NULL,
-  codigo character varying(255),
-  descricao character varying(255),
+  codigo character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT procedimento_pkey PRIMARY KEY (id),
-  CONSTRAINT uk_kk6rwjftubpqd1g14ean2aq7v UNIQUE (codigo)
+  CONSTRAINT uk_kk6rwjftubpqd1g14ean2aq7v UNIQUE (codigo),
+  CONSTRAINT uk_osvrmhpno2lxfyp0bb8q2ilec UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
 ALTER TABLE procedimento OWNER TO postgres;
 
 DROP TABLE IF EXISTS profissionalsaude CASCADE;
 CREATE TABLE profissionalsaude(
   id bigserial NOT NULL,
-  cbo character varying(255),
-  descricao character varying(255),
+  cbo character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT profissionalsaude_pkey PRIMARY KEY (id),
   CONSTRAINT uk_ajpxhrq27so53tq0vhldnfe0g UNIQUE (descricao),
   CONSTRAINT uk_klfw1rigvt7vn28yemxrobmoq UNIQUE (cbo)
@@ -244,7 +245,7 @@ ALTER TABLE profissionalsaude OWNER TO postgres;
 DROP TABLE IF EXISTS especialidade CASCADE;
 CREATE TABLE especialidade(
   id bigserial NOT NULL,
-  area character varying(255),
+  area character varying(255) NOT NULL,
   CONSTRAINT especialidade_pkey PRIMARY KEY (id),
   CONSTRAINT uk_kxjqchwqjhlxo7b59g7p3wim4 UNIQUE (area)
 ) WITH (OIDS=FALSE);
@@ -253,8 +254,8 @@ ALTER TABLE especialidade OWNER TO postgres;
 DROP TABLE IF EXISTS doenca CASCADE;
 CREATE TABLE doenca(
   id bigserial NOT NULL,
-  cid character varying(255),
-  descricao character varying(255),
+  cid character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT doenca_pkey PRIMARY KEY (id),
   CONSTRAINT uk_5cjq1gkdr5y2w98keb1ed19d4 UNIQUE (cid, descricao)
 ) WITH (OIDS=FALSE);
@@ -263,8 +264,8 @@ ALTER TABLE doenca OWNER TO postgres;
 DROP TABLE IF EXISTS tipounidade CASCADE;
 CREATE TABLE tipounidade(
   id bigserial NOT NULL,
-  codigo character varying(255),
-  descricao character varying(255),
+  codigo character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT tipounidade_pkey PRIMARY KEY (id),
   CONSTRAINT uk_3uvwt7g97y41ikn6bx4tbsf3c UNIQUE (codigo),
   CONSTRAINT uk_g7raf39bbm9pjsuaguk5jc39u UNIQUE (descricao)
@@ -275,7 +276,7 @@ DROP TABLE IF EXISTS unidadesaude CASCADE;
 CREATE TABLE unidadesaude(
   id bigserial NOT NULL,
   cnes character varying(255),
-  nome character varying(255),
+  nome character varying(255) NOT NULL,
   tipounidade_id bigint,
   CONSTRAINT unidadesaude_pkey PRIMARY KEY (id),
   CONSTRAINT fk_mem0kevpud2xbs15o411pokow FOREIGN KEY (tipounidade_id)

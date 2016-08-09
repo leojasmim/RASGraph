@@ -20,10 +20,10 @@ public class ProfissionalSaude implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String cbo;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String descricao;
 
     public ProfissionalSaude() {

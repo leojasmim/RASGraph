@@ -27,7 +27,7 @@ public class EsgotamentoDAOTest {
     }
 
     @Test
-    public void testSave(){
+    public void testSave() {
         esgotamento = new Esgotamento();
         esgotamento.setDescricao("ESGOTO_01");
         esgotamento = esgotamentoDAO.save(esgotamento);
@@ -44,33 +44,38 @@ public class EsgotamentoDAOTest {
         esgotamento.setDescricao("ESGOTO_03");
         esgotamento = esgotamentoDAO.save(esgotamento);
         assertTrue(esgotamento == null);
+        esgotamento = new Esgotamento();
+        esgotamento = esgotamentoDAO.save(esgotamento);
+        assertTrue(esgotamento == null);
     }
-        
+
     @Test
-    public void testRemove(){
+    public void testRemove() {
         esgotamento = esgotamentoDAO.getByID(3L);
-        if (esgotamento != null){
+        if (esgotamento != null) {
             esgotamentoDAO.remove(esgotamento);
         }
         esgotamento = esgotamentoDAO.getByID(3L);
         assertTrue(esgotamento == null);
     }
-    
+
     @Test
-    public void testGetAllAndCount(){
+    public void testGetAllAndCount() {
         long count = esgotamentoDAO.count();
         esgotamentos = esgotamentoDAO.getAll();
-        assertTrue(esgotamentos.size() ==  count);
+        assertTrue(esgotamentos.size() == count);
         assertTrue(count == 2);
     }
-    
+
     @Test
-    public void testFind(){
+    public void testFind() {
         esgotamento = new Esgotamento();
         esgotamento.setDescricao("ESGOTO_05");
         assertTrue(esgotamentoDAO.find(esgotamento) == null);
         esgotamento.setDescricao("ESGOTO_01");
         assertTrue(esgotamentoDAO.find(esgotamento).getId() == 1);
+        esgotamento = new Esgotamento();
+        assertTrue(esgotamentoDAO.find(esgotamento) == null);
     }
-            
+
 }

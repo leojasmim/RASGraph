@@ -48,6 +48,10 @@ public class TratamentoAguaDAOTest {
         tratamentoAgua.setDescricao("TRATAGUA_03");
         tratamentoAgua = tratamentoAguaDAO.save(tratamentoAgua);
         assertTrue(tratamentoAgua == null);
+
+        tratamentoAgua = new TratamentoAgua();
+        tratamentoAgua = tratamentoAguaDAO.save(tratamentoAgua);
+        assertTrue(tratamentoAgua == null);
     }
 
     @Test
@@ -77,6 +81,9 @@ public class TratamentoAguaDAOTest {
         tratamentoAgua.setDescricao("TRATAGUA_02");
         assertTrue(tratamentoAguaDAO.find(tratamentoAgua) != null);
         assertTrue(tratamentoAguaDAO.find(tratamentoAgua).getId() == 2);
+
+        tratamentoAgua = new TratamentoAgua();
+        assertTrue(tratamentoAguaDAO.find(tratamentoAgua) == null);
     }
 
 }

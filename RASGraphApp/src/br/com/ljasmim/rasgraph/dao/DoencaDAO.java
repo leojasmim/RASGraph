@@ -18,8 +18,7 @@ public class DoencaDAO extends RepositoryBaseJPA<Doenca, Long> {
     public Doenca find(Doenca doenca) {
         try {
             return (Doenca) getEntityManager().createQuery("SELECT d from Doenca AS d "
-                    + "where d.cid like '" + doenca.getCid() + "' "
-                    + "AND d.descricao like '" + doenca.getDescricao() + "'").getSingleResult();
+                    + "where d.cid like '" + doenca.getCid() + "'").getSingleResult();
         } catch (Exception e) {
             return null;
         }

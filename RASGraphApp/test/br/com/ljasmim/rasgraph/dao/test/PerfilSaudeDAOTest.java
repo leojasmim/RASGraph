@@ -13,19 +13,19 @@ import org.junit.Before;
  * @author LeonardoJasmim
  */
 public class PerfilSaudeDAOTest {
-    
+
     PerfilSaude perfil;
     PerfilSaudeDAO perfilDAO;
     List<PerfilSaude> perfis;
-    
+
     public PerfilSaudeDAOTest() {
     }
-    
+
     @Before
     public void setUp() {
         perfilDAO = new PerfilSaudeDAO();
     }
-    
+
     @Test
     public void testSave() {
         perfil = new PerfilSaude();
@@ -44,8 +44,11 @@ public class PerfilSaudeDAOTest {
         perfil.setDescricao("PERFIL_03");
         perfil = perfilDAO.save(perfil);
         assertTrue(perfil == null);
+        perfil = new PerfilSaude();
+        perfil = perfilDAO.save(perfil);
+        assertTrue(perfil == null);
     }
-    
+
     @Test
     public void testRemove() {
         perfil = perfilDAO.getByID(3L);
@@ -55,7 +58,7 @@ public class PerfilSaudeDAOTest {
         perfil = perfilDAO.getByID(3L);
         assertTrue(perfil == null);
     }
-    
+
     @Test
     public void testGetAllAndCount() {
         long count = perfilDAO.count();
@@ -63,7 +66,7 @@ public class PerfilSaudeDAOTest {
         assertTrue(perfis.size() == count);
         assertTrue(count == 2);
     }
-    
+
     @Test
     public void find() {
         perfil = new PerfilSaude();
@@ -72,5 +75,7 @@ public class PerfilSaudeDAOTest {
         perfil.setDescricao("PERFIL_01");
         assertTrue(perfilDAO.find(perfil) != null);
         assertTrue(perfilDAO.find(perfil).getId() == 1);
+        perfil = new PerfilSaude();
+        assertTrue(perfilDAO.find(perfil) == null);
     }
 }

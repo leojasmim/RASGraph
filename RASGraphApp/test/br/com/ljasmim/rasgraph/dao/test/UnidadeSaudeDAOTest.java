@@ -57,6 +57,10 @@ public class UnidadeSaudeDAOTest {
         unidade.setTipoUnidade(tipoUnidadeDAO.getByID(1L));
         unidade = unidadeSaudeDAO.save(unidade);
         assertTrue(unidade == null);
+
+        unidade = new UnidadeSaude();
+        unidade = unidadeSaudeDAO.save(unidade);
+        assertTrue(unidade == null);
     }
 
     @Test
@@ -83,8 +87,10 @@ public class UnidadeSaudeDAOTest {
         assertTrue(unidadeSaudeDAO.find(unidade) != null);
         assertTrue(unidadeSaudeDAO.find(unidade).getId() == 1);
 
-        unidade.setCnes("U00005");
-        unidade.setNome("UNID_01");
+        unidade.setNome("UNID_05");
+        assertTrue(unidadeSaudeDAO.find(unidade) == null);
+
+        unidade = new UnidadeSaude();
         assertTrue(unidadeSaudeDAO.find(unidade) == null);
     }
 

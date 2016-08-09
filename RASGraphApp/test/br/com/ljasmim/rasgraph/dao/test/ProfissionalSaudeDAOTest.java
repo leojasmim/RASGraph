@@ -46,31 +46,36 @@ public class ProfissionalSaudeDAOTest {
         profSaude.setDescricao("PROF_03");
         profSaude = profSaudeDAO.save(profSaude);
         assertTrue(profSaude == null);
+        profSaude = new ProfissionalSaude();
+        profSaude = profSaudeDAO.save(profSaude);
+        assertTrue(profSaude == null);
     }
-    
+
     @Test
-    public void testRemove(){
+    public void testRemove() {
         profSaude = profSaudeDAO.getByID(3L);
-        if(profSaude != null){
+        if (profSaude != null) {
             profSaudeDAO.remove(profSaude);
-        }                
+        }
         profSaude = profSaudeDAO.getByID(3L);
         assertTrue(profSaude == null);
     }
 
     @Test
-    public void testGetAllAndCount(){
+    public void testGetAllAndCount() {
         assertTrue(profSaudeDAO.count() == profSaudeDAO.getAll().size());
         assertTrue(profSaudeDAO.count() == 2);
     }
-    
+
     @Test
-    public void testFind(){
+    public void testFind() {
         profSaude = new ProfissionalSaude();
         profSaude.setCbo("A03");
         assertTrue(profSaudeDAO.find(profSaude) == null);
         profSaude.setCbo("A01");
         assertTrue(profSaudeDAO.find(profSaude) != null);
         assertTrue(profSaudeDAO.find(profSaude).getDescricao().equals("PROF_01"));
+        profSaude = new ProfissionalSaude();
+        assertTrue(profSaudeDAO.find(profSaude) == null);
     }
 }

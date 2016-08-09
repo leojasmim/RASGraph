@@ -129,7 +129,10 @@ public class ResidenciaDAOTest {
     
     @Test
     public void testEquals(){
-        assertTrue(residenciaDAO.getByID(2L).equals(residenciaDAO.getByID(3L)));
-        assertFalse(residenciaDAO.getByID(2L).equals(residenciaDAO.getByID(1L)));
+        assertTrue(residenciaDAO.getByID(1L).equals(residenciaDAO.getByID(2L)));
+        assertTrue(residenciaDAO.getByID(1L).equals(residenciaDAO.getByID(3L)));
+        assertTrue(residenciaDAO.getByID(1L).equals(residenciaDAO.getByID(4L)));
+        assertTrue(residenciaDAO.getByID(1L).equals(residenciaDAO.getByID(5L)));
+        assertTrue(!residenciaDAO.getByID(1L).equals(residenciaDAO.getByID(7L)));
     }
 }
