@@ -57,7 +57,7 @@ ALTER TABLE registrodeatendimento OWNER TO postgres;
 DROP TABLE IF EXISTS municipio CASCADE;
 CREATE TABLE municipio(
   id bigserial NOT NULL,
-  nome character varying(255),
+  nome character varying(255) NOT NULL,
   CONSTRAINT municipio_pkey PRIMARY KEY (id),
   CONSTRAINT uk_pas4awibw1tkx1cg5ga055gmm UNIQUE (nome)
 )WITH(OIDS=FALSE);
