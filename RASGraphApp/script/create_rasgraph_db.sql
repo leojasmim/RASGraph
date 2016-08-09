@@ -166,7 +166,7 @@ ALTER TABLE grupocomunitario OWNER TO postgres;
 DROP TABLE IF EXISTS meiocomunicacao CASCADE;
 CREATE TABLE meiocomunicacao(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT meiocomunicacao_pkey PRIMARY KEY (id),
   CONSTRAINT uk_p1ryiat6s30iybwupel2uxa3e UNIQUE (descricao)
 ) WITH (OIDS=FALSE);

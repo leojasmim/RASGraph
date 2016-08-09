@@ -13,19 +13,19 @@ import org.junit.Before;
  * @author LeonardoJasmim
  */
 public class MeioComunicacaoDAOTest {
-    
+
     MeioComunicacao meioComunicacao;
     MeioComunicacaoDAO meioComunicacaoDAO;
     List<MeioComunicacao> meiosComunicacao;
-    
+
     public MeioComunicacaoDAOTest() {
     }
-    
+
     @Before
     public void setUp() {
         meioComunicacaoDAO = new MeioComunicacaoDAO();
     }
-    
+
     @Test
     public void testSave() {
         meioComunicacao = new MeioComunicacao();
@@ -44,8 +44,11 @@ public class MeioComunicacaoDAOTest {
         meioComunicacao.setDescricao("MEIOCOMUN_03");
         meioComunicacao = meioComunicacaoDAO.save(meioComunicacao);
         assertTrue(meioComunicacao == null);
+        meioComunicacao = new MeioComunicacao();
+        meioComunicacao = meioComunicacaoDAO.save(meioComunicacao);
+        assertTrue(meioComunicacao == null);
     }
-    
+
     @Test
     public void testRemove() {
         meioComunicacao = meioComunicacaoDAO.getByID(3L);
@@ -55,7 +58,7 @@ public class MeioComunicacaoDAOTest {
         meioComunicacao = meioComunicacaoDAO.getByID(3L);
         assertTrue(meioComunicacao == null);
     }
-    
+
     @Test
     public void testGetAllAndCount() {
         long count = meioComunicacaoDAO.count();
@@ -63,14 +66,16 @@ public class MeioComunicacaoDAOTest {
         assertTrue(meiosComunicacao.size() == count);
         assertTrue(count == 2);
     }
-    
+
     @Test
-    public void testFind(){
+    public void testFind() {
         meioComunicacao = new MeioComunicacao();
         meioComunicacao.setDescricao("MEIOCOMUN_05");
         assertTrue(meioComunicacaoDAO.find(meioComunicacao) == null);
         meioComunicacao.setDescricao("MEIOCOMUN_01");
         assertTrue(meioComunicacaoDAO.find(meioComunicacao) != null);
         assertTrue(meioComunicacaoDAO.find(meioComunicacao).getId() == 1);
+        meioComunicacao = new MeioComunicacao();
+        assertTrue(meioComunicacaoDAO.find(meioComunicacao) == null);
     }
 }
