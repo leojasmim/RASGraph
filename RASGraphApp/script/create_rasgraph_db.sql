@@ -276,7 +276,7 @@ DROP TABLE IF EXISTS unidadesaude CASCADE;
 CREATE TABLE unidadesaude(
   id bigserial NOT NULL,
   cnes character varying(255),
-  nome character varying(255),
+  nome character varying(255) NOT NULL,
   tipounidade_id bigint,
   CONSTRAINT unidadesaude_pkey PRIMARY KEY (id),
   CONSTRAINT fk_mem0kevpud2xbs15o411pokow FOREIGN KEY (tipounidade_id)

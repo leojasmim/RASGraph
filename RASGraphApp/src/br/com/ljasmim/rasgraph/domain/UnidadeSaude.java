@@ -25,7 +25,7 @@ public class UnidadeSaude implements Serializable {
 
     private String cnes;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String nome;
 
     @ManyToOne(fetch = FetchType.LAZY)
