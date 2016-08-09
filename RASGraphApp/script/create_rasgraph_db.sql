@@ -234,8 +234,8 @@ ALTER TABLE procedimento OWNER TO postgres;
 DROP TABLE IF EXISTS profissionalsaude CASCADE;
 CREATE TABLE profissionalsaude(
   id bigserial NOT NULL,
-  cbo character varying(255),
-  descricao character varying(255),
+  cbo character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT profissionalsaude_pkey PRIMARY KEY (id),
   CONSTRAINT uk_ajpxhrq27so53tq0vhldnfe0g UNIQUE (descricao),
   CONSTRAINT uk_klfw1rigvt7vn28yemxrobmoq UNIQUE (cbo)
