@@ -79,7 +79,7 @@ ALTER TABLE bairro OWNER TO postgres;
 DROP TABLE IF EXISTS coletalixo CASCADE;
 CREATE TABLE coletalixo(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT coletalixo_pkey PRIMARY KEY (id),
   CONSTRAINT uk_sfi7vy5cg6gva0ymn420vp4d6 UNIQUE (descricao)
 )WITH(OIDS=FALSE);
