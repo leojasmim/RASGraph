@@ -97,7 +97,7 @@ ALTER TABLE tratamentoagua OWNER TO postgres;
 DROP TABLE IF EXISTS tipohabitacao CASCADE;
 CREATE TABLE tipohabitacao(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT tipohabitacao_pkey PRIMARY KEY (id),
   CONSTRAINT uk_862iajp0vxk323bqf8muwyoc2 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);

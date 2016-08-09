@@ -32,16 +32,23 @@ public class TipoHabitacaoDAOTest {
         tipoHab.setDescricao("TIPOHAB_01");
         tipoHab = tipoHabDAO.save(tipoHab);
         assertTrue(tipoHab != null);
+
         tipoHab = new TipoHabitacao();
         tipoHab.setDescricao("TIPOHAB_02");
         tipoHab = tipoHabDAO.save(tipoHab);
         assertTrue(tipoHab != null);
+
         tipoHab = new TipoHabitacao();
         tipoHab.setDescricao("TIPOHAB_03");
         tipoHab = tipoHabDAO.save(tipoHab);
         assertTrue(tipoHab != null);
+
         tipoHab = new TipoHabitacao();
         tipoHab.setDescricao("TIPOHAB_03");
+        tipoHab = tipoHabDAO.save(tipoHab);
+        assertTrue(tipoHab == null);
+
+        tipoHab = new TipoHabitacao();
         tipoHab = tipoHabDAO.save(tipoHab);
         assertTrue(tipoHab == null);
     }
@@ -72,5 +79,7 @@ public class TipoHabitacaoDAOTest {
         tipoHab.setDescricao("TIPOHAB_02");
         assertTrue(tipoHabDAO.find(tipoHab) != null);
         assertTrue(tipoHabDAO.find(tipoHab).getId() == 2);
+        tipoHab = new TipoHabitacao();
+        assertTrue(tipoHabDAO.find(tipoHab) == null);
     }
 }
