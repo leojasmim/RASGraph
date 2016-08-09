@@ -168,9 +168,11 @@ public class Paciente implements Serializable {
         if (!Objects.equals(this.sexo, other.sexo)) {
             return false;
         }
-        if (!Objects.equals(this.residencia, other.residencia)) {
+
+        if(!Objects.equals(this.residencia, other.residencia)){
             return false;
         }
+        
         if (!Objects.equals(this.grupoComunitario, other.grupoComunitario)) {
             return false;
         }

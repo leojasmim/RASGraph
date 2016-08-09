@@ -16,10 +16,10 @@ public class GeradorDeScript {
 
     /**
      * Cria o arquivo .sql
-     * 
+     *
      * @param scriptSqlString Conteudo do script em linguagem sql
      * @param sqlPath Caminho para arquivo .sql gerado
-     * 
+     *
      * @return arquivo .sql com script
      */
     public static File getScriptSqlFile(String scriptSqlString, String sqlPath) {
@@ -41,13 +41,13 @@ public class GeradorDeScript {
 
     /**
      * Cria arquivo .bat para executar o script .sql
-     * 
+     *
      * @param sqlFile Arquivo .sql com script de criação da base de dados
      * @param batchPath nome do arquivo de saída para o arquivo
-     * 
+     *
      * @return arquivo .bat
-     * 
-     * @throws IOException 
+     *
+     * @throws IOException
      */
     public static File getBatchForRunSqlFile(File sqlFile, String batchPath) throws IOException {
         File batchFile = new File(batchPath);
@@ -65,17 +65,17 @@ public class GeradorDeScript {
         buffer.newLine();
         buffer.close();
         writer.close();
-         
+
         return batchFile;
     }
-    
+
     /**
      * Executa rotina sql
-     * 
+     *
      * @param batchFile arquivo .bat para execução do script sql
-     * 
+     *
      * @return true caso execute o arquivo, false caso contrário
-     * 
+     *
      * @throws IOException
      */
     public static boolean runBatchFile(File batchFile) throws IOException {
@@ -95,15 +95,14 @@ public class GeradorDeScript {
             return false;
         }
     }
-    
+
     //CRIAÇÃO DA BASE DE DADOS
-    
     /**
-     * Gerar o conteudo do script para a criação da base de dados rasgraph e da 
+     * Gerar o conteudo do script para a criação da base de dados rasgraph e da
      * tabela de registros de atendimento
-     * 
+     *
      * @return Conteúdo do script para criação da rasgraph_db
-     */  
+     */
     public static String getScriptStringForCreateDatabase() {
         String script = "DROP DATABASE rasgraph_db;\n"
                 + "CREATE DATABASE rasgraph_db\n"
@@ -163,15 +162,14 @@ public class GeradorDeScript {
                 + "ALTER TABLE registrodeatendimento OWNER TO postgres;\n";
         return script;
     }
-    
+
     //CARREGAMENTO DE DADOS
-    
     /**
-     * Gera o conteudo do script sql para copiar os arquivos .csv para a tabela 
+     * Gera o conteudo do script sql para copiar os arquivos .csv para a tabela
      * registro de atendimentos
-     * 
+     *
      * @param paths Lista com caminhos para os arquivos .cvs
-     * 
+     *
      * @return Conteúdo do script para criação da rasgraph_db
      */
     public static String getScriptStringForCopyCvs(List<String> paths) {
@@ -186,8 +184,17 @@ public class GeradorDeScript {
                     + "meio_transp,municipio,bairro)\n"
                     + "FROM '" + path + "' using delimiters ';' WITH NULL AS '' encoding 'latin1' CSV HEADER;\n\n";
         }
-        
+
         script += "vacuum;\n\n";
         return script;
-    }      
+    }
+
+    public static void createNewDatabase() throws IOException {
+        File scriptSql = new File("script/create_rasgraph_db.sql");
+        String batchPath = "script/create_rasgraph_db.bat";
+
+        File scriptBatch = getBatchForRunSqlFile(scriptSql, batchPath);
+        runBatchFile(scriptBatch);
+        scriptBatch.delete();
+    }
 }
