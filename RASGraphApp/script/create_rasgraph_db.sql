@@ -264,8 +264,8 @@ ALTER TABLE doenca OWNER TO postgres;
 DROP TABLE IF EXISTS tipounidade CASCADE;
 CREATE TABLE tipounidade(
   id bigserial NOT NULL,
-  codigo character varying(255),
-  descricao character varying(255),
+  codigo character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT tipounidade_pkey PRIMARY KEY (id),
   CONSTRAINT uk_3uvwt7g97y41ikn6bx4tbsf3c UNIQUE (codigo),
   CONSTRAINT uk_g7raf39bbm9pjsuaguk5jc39u UNIQUE (descricao)

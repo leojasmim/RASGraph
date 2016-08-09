@@ -20,10 +20,10 @@ public class TipoUnidadeDAOTest {
     }
 
     @Before
-    public void setUp(){
+    public void setUp() {
         tipoDAO = new TipoUnidadeDAO();
     }
-    
+
     @Test
     public void testSave() {
         tipo = new TipoUnidade();
@@ -43,10 +43,14 @@ public class TipoUnidadeDAOTest {
         tipo.setDescricao("TIPO_03");
         tipo = tipoDAO.save(tipo);
         assertTrue(tipo != null);
-        tipo = new TipoUnidade();
 
+        tipo = new TipoUnidade();
         tipo.setCodigo("A03");
         tipo.setDescricao("TIPO_03");
+        tipo = tipoDAO.save(tipo);
+        assertTrue(tipo == null);
+
+        tipo = new TipoUnidade();
         tipo = tipoDAO.save(tipo);
         assertTrue(tipo == null);
     }
@@ -75,5 +79,8 @@ public class TipoUnidadeDAOTest {
         tipo.setCodigo("A01");
         assertTrue(tipoDAO.find(tipo) != null);
         assertTrue(tipoDAO.find(tipo).getDescricao().equals("TIPO_01"));
+
+        tipo = new TipoUnidade();
+        assertTrue(tipoDAO.find(tipo) == null);
     }
 }
