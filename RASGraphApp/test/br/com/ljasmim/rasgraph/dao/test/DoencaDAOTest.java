@@ -53,8 +53,18 @@ public class DoencaDAOTest {
         assertTrue(doenca != null);
 
         doenca = new Doenca();
+        doenca.setCid("A03");
+        doenca.setDescricao("DOENCA_03");
+        doenca = doencaDAO.save(doenca);
+        assertTrue(doenca != null);
+
+        doenca = new Doenca();
         doenca.setCid("A02");
         doenca.setDescricao("DOENCA_02");
+        doenca = doencaDAO.save(doenca);
+        assertTrue(doenca == null);
+
+        doenca = new Doenca();
         doenca = doencaDAO.save(doenca);
         assertTrue(doenca == null);
     }
@@ -72,7 +82,7 @@ public class DoencaDAOTest {
     @Test
     public void testGetAllAndCount() {
         assertTrue(doencaDAO.getAll().size() == doencaDAO.count());
-        assertTrue(doencaDAO.count() == 3);
+        assertTrue(doencaDAO.count() == 4);
     }
 
     @Test
@@ -81,10 +91,13 @@ public class DoencaDAOTest {
         doenca.setCid("A01");
         doenca.setDescricao("DOENCA_03");
         assertTrue(doencaDAO.find(doenca) == null);
-        
-        doenca.setDescricao("DOENCA_01");
+
+        doenca.setCid("A03");
         assertTrue(doencaDAO.find(doenca) != null);
-        assertTrue(doencaDAO.find(doenca).getId() == 1);
+        assertTrue(doencaDAO.find(doenca).getId() == 5);
+
+        doenca = new Doenca();
+        assertTrue(doencaDAO.find(doenca) == null);
     }
 
 }

@@ -254,8 +254,8 @@ ALTER TABLE especialidade OWNER TO postgres;
 DROP TABLE IF EXISTS doenca CASCADE;
 CREATE TABLE doenca(
   id bigserial NOT NULL,
-  cid character varying(255),
-  descricao character varying(255),
+  cid character varying(255) NOT NULL,
+  descricao character varying(255) NOT NULL,
   CONSTRAINT doenca_pkey PRIMARY KEY (id),
   CONSTRAINT uk_5cjq1gkdr5y2w98keb1ed19d4 UNIQUE (cid, descricao)
 ) WITH (OIDS=FALSE);
