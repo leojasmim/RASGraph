@@ -167,12 +167,7 @@ public class Paciente implements Serializable {
         }
         if (!Objects.equals(this.sexo, other.sexo)) {
             return false;
-        }
-
-        if(!Objects.equals(this.residencia, other.residencia)){
-            return false;
-        }
-        
+        }       
         if (!Objects.equals(this.grupoComunitario, other.grupoComunitario)) {
             return false;
         }
@@ -185,6 +180,35 @@ public class Paciente implements Serializable {
         if (!Objects.equals(this.perfilSaude, other.perfilSaude)) {
             return false;
         }
+        
+        if (this.getResidencia().isEnergiaEletrica() != other.getResidencia().isEnergiaEletrica()) {
+            return false;
+        }
+        if (this.getResidencia().getComodos() != other.getResidencia().getComodos()) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getColetaLixo(), other.getResidencia().getColetaLixo())) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getTratamentoAgua(), other.getResidencia().getTratamentoAgua())) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getTipo(), other.getResidencia().getTipo())) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getAbastecimentoAgua(), other.getResidencia().getAbastecimentoAgua())) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getEsgotamento(), other.getResidencia().getEsgotamento())) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getBairro().getNome(), other.getResidencia().getBairro().getNome())) {
+            return false;
+        }
+        if (!Objects.equals(this.getResidencia().getBairro().getMunicipio().getNome(), 
+                other.getResidencia().getBairro().getMunicipio().getNome())) {
+            return false;
+        }      
         return true;
     }
 

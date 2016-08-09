@@ -412,7 +412,7 @@ public class RASGraphConverter {
     }
 
     public Internacao buscaInternacaoDoRegistro(RegistroDeAtendimento registro) {
-        if (Util.converteStringSimOuNaoToBoolean(registro.getEncaminhadoAoEspecialista())) {
+        if (Util.converteStringSimOuNaoToBoolean(registro.getEncaminhadoParaIntenacao())) {
             Internacao internacao = new Internacao();
             InternacaoDAO internacaoDAO = new InternacaoDAO();
 

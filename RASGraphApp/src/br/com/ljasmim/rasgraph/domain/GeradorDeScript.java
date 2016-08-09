@@ -195,6 +195,8 @@ public class GeradorDeScript {
 
         File scriptBatch = getBatchForRunSqlFile(scriptSql, batchPath);
         runBatchFile(scriptBatch);
-        scriptBatch.delete();
+        if(!scriptBatch.delete()){
+            System.out.println("Problema para deletar o script .bat");;
+        }
     }
 }
