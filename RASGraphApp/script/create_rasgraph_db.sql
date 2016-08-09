@@ -88,7 +88,7 @@ ALTER TABLE coletalixo OWNER TO postgres;
 DROP TABLE IF EXISTS tratamentoagua CASCADE;
 CREATE TABLE tratamentoagua(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT tratamentoagua_pkey PRIMARY KEY (id),
   CONSTRAINT uk_3sncvj4urmktw07fg7p112323 UNIQUE (descricao)
 )WITH(OIDS=FALSE);
