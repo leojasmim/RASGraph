@@ -21,7 +21,7 @@ public class PerfilSaude implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "descricao", unique = true)
+    @Column(name = "descricao", unique = true, nullable = false)
     private String descricao;
 
     public PerfilSaude() {

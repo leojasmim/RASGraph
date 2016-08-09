@@ -184,7 +184,7 @@ ALTER TABLE meiotransporte OWNER TO postgres;
 DROP TABLE IF EXISTS perfilsaude CASCADE;
 CREATE TABLE perfilsaude(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT perfilsaude_pkey PRIMARY KEY (id),
   CONSTRAINT uk_bg6xmx1imtwe3s5skjkwx3400 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
