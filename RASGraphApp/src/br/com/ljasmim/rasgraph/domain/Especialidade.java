@@ -20,7 +20,7 @@ public class Especialidade implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "area", unique = true)
+    @Column(unique = true, nullable = false)
     private String area;
 
     public Especialidade() {

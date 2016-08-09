@@ -245,7 +245,7 @@ ALTER TABLE profissionalsaude OWNER TO postgres;
 DROP TABLE IF EXISTS especialidade CASCADE;
 CREATE TABLE especialidade(
   id bigserial NOT NULL,
-  area character varying(255),
+  area character varying(255) NOT NULL,
   CONSTRAINT especialidade_pkey PRIMARY KEY (id),
   CONSTRAINT uk_kxjqchwqjhlxo7b59g7p3wim4 UNIQUE (area)
 ) WITH (OIDS=FALSE);
