@@ -157,7 +157,7 @@ ALTER TABLE residencia OWNER TO postgres;
 DROP TABLE IF EXISTS grupocomunitario CASCADE;
 CREATE TABLE grupocomunitario(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT grupocomunitario_pkey PRIMARY KEY (id),
   CONSTRAINT uk_mk4mkg6spk3r92a8eo9bi49k8 UNIQUE (descricao)
 ) WITH (OIDS=FALSE);

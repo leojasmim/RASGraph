@@ -43,6 +43,9 @@ public class GrupoComunitarioDAOTest {
         grupo.setDescricao("GRUPOCOMUN_03");
         grupo =  grupoDAO.save(grupo);
         assertTrue(grupo == null);
+        grupo = new GrupoComunitario();
+        grupo =  grupoDAO.save(grupo);
+        assertTrue(grupo == null);
     }
         
     @Test
@@ -68,8 +71,12 @@ public class GrupoComunitarioDAOTest {
         grupo = new GrupoComunitario();
         grupo.setDescricao("GRUPOCOMUN_05");
         assertTrue(grupoDAO.find(grupo) == null);
+        
         grupo.setDescricao("GRUPOCOMUN_01");
         assertTrue(grupoDAO.find(grupo) != null);
         assertTrue(grupoDAO.find(grupo).getId() == 1);
+        
+        grupo = new GrupoComunitario();
+        assertTrue(grupoDAO.find(grupo) == null);
     }
 }
