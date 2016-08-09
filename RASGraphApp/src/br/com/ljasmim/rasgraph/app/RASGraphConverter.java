@@ -8,6 +8,7 @@ import br.com.ljasmim.rasgraph.dao.DoencaDAO;
 import br.com.ljasmim.rasgraph.dao.EsgotamentoDAO;
 import br.com.ljasmim.rasgraph.dao.EspecialidadeDAO;
 import br.com.ljasmim.rasgraph.dao.GrupoComunitarioDAO;
+import br.com.ljasmim.rasgraph.dao.InternacaoDAO;
 import br.com.ljasmim.rasgraph.dao.MeioComunicacaoDAO;
 import br.com.ljasmim.rasgraph.dao.MeioTransporteDAO;
 import br.com.ljasmim.rasgraph.dao.MunicipioDAO;
@@ -30,6 +31,7 @@ import br.com.ljasmim.rasgraph.domain.Esgotamento;
 import br.com.ljasmim.rasgraph.domain.Especialidade;
 import br.com.ljasmim.rasgraph.domain.GeradorDeScript;
 import br.com.ljasmim.rasgraph.domain.GrupoComunitario;
+import br.com.ljasmim.rasgraph.domain.Internacao;
 import br.com.ljasmim.rasgraph.domain.MeioComunicacao;
 import br.com.ljasmim.rasgraph.domain.MeioTransporte;
 import br.com.ljasmim.rasgraph.domain.Municipio;
@@ -50,44 +52,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Classe que converte um registro de atendimento para a base do RASGraph
  *
  * @author LeonardoJasmim
  */
 public class RASGraphConverter {
 
-    private RegistroDeAtendimento registroGlobal;
-    private RegistroDeAtendimentoDAO registroDAO;
-
     public RASGraphConverter() {
     }
 
     public void start() throws IOException {
-        inicializarVariaveis();
         GeradorDeScript.createNewDatabase();
         carregaCsvFile(getPathsCsv());
+        converterRegistros();
     }
 
     public void converterRegistros() {
+        RegistroDeAtendimento registro;
+        RegistroDeAtendimentoDAO registroDAO = new RegistroDeAtendimentoDAO();
+
+        int count = 0;
+
         long i = registroDAO.getFirst().getId();
-        long n = i + registroDAO.count() - 1;
+        long n = i + registroDAO.count();
 
-        while (i <= n) {
-            registroGlobal = registroDAO.getByID(i);
-
+        while (i < n) {
+            registro = registroDAO.getByID(i);
+            converteRegistroParaAtendimento(registro);
+            i++;
+            count++;
         }
-    }
 
-    public void inicializarVariaveis() {
-        registroDAO = new RegistroDeAtendimentoDAO();
-
+        System.out.println("Finalizado! " + count + " registros convertidos.");
     }
 
     public List<String> getPathsCsv() {
         List<String> paths = new ArrayList<>();
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
+        //paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_dentistas-dados_abertos.csv");
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
+        //paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
+        //paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
         return paths;
     }
 
@@ -194,13 +198,15 @@ public class RASGraphConverter {
         }
     }
 
-    public Residencia getResidenciaDoRegistro(RegistroDeAtendimento registro) {
+    public Residencia capturarResidenciaDoRegistro(RegistroDeAtendimento registro) {
         Residencia residencia = new Residencia();
 
         residencia.setAbastecimentoAgua(buscaAbastecimentoAguaDoRegistro(registro));
         residencia.setBairro(buscaBairroDoRegistro(registro));
         residencia.setColetaLixo(buscaColetaLixoDoRegistro(registro));
-        residencia.setComodos(Integer.parseInt(registro.getComodos()));
+        if (registro.getComodos() != null) {
+            residencia.setComodos(Integer.parseInt(registro.getComodos()));
+        }
         residencia.setEnergiaEletrica(Util.converteStringSimOuNaoToBoolean(registro.getEnergiaEletrica()));
         residencia.setEsgotamento(buscaEsgotamentoDoRegistro(registro));
         residencia.setTipo(buscaTipoHabitacaoDoRegistro(registro));
@@ -209,7 +215,7 @@ public class RASGraphConverter {
         return residencia;
     }
 
-    public Residencia saveNewResidencia(Residencia residencia) {
+    public Residencia salvarNovaResidencia(Residencia residencia) {
         ResidenciaDAO rDAO = new ResidenciaDAO();
         return rDAO.save(residencia);
     }
@@ -271,12 +277,12 @@ public class RASGraphConverter {
         PacienteDAO pacienteDAO = new PacienteDAO();
         List<Paciente> pacientes;
 
-        paciente.setDataNascimento(Util.parseLocalToDateSql(registro.getDataAtendimento()));
+        paciente.setDataNascimento(Util.parseLocalToDateSql(registro.getDataNascimento()));
         paciente.setGrupoComunitario(buscaGrupoComunitarioDoRegistro(registro));
         paciente.setMeioComunicacao(buscaMeioComunicacaoDoRegistro(registro));
         paciente.setMeioTransporte(buscaMeioTransporteDoRegistro(registro));
         paciente.setPerfilSaude(buscaPerfilSaudeDoRegistro(registro));
-        paciente.setResidencia(getResidenciaDoRegistro(registro));
+        paciente.setResidencia(capturarResidenciaDoRegistro(registro));
         paciente.setSexo(registro.getSexo());
 
         pacientes = pacienteDAO.find(paciente);
@@ -288,7 +294,7 @@ public class RASGraphConverter {
         }
 
         paciente.setCodigo((int) (pacienteDAO.count() + 1));
-        paciente.setResidencia(saveNewResidencia(paciente.getResidencia()));
+        paciente.setResidencia(salvarNovaResidencia(paciente.getResidencia()));
         return pacienteDAO.save(paciente);
     }
 
@@ -310,13 +316,13 @@ public class RASGraphConverter {
         UnidadeSaude unidade = new UnidadeSaude();
         UnidadeSaudeDAO unidadeDAO = new UnidadeSaudeDAO();
 
-        unidade.setCnes(registro.getUnidadeCodigo());
         unidade.setNome(registro.getUnidadeDescricao());
 
         if (unidadeDAO.find(unidade) != null) {
             return unidadeDAO.find(unidade);
         } else {
             unidade.setTipoUnidade(buscaTipoUnidadeDoRegistro(registro));
+            unidade.setCnes(registro.getUnidadeCodigo());
             return unidadeDAO.save(unidade);
         }
     }
@@ -350,10 +356,9 @@ public class RASGraphConverter {
     }
 
     public Especialidade buscaEspecialidadeDoRegistro(RegistroDeAtendimento registro) {
-        Especialidade especialidade = new Especialidade();
-        EspecialidadeDAO especialidadeDAO = new EspecialidadeDAO();
-
         if (Util.converteStringSimOuNaoToBoolean(registro.getEncaminhadoAoEspecialista())) {
+            Especialidade especialidade = new Especialidade();
+            EspecialidadeDAO especialidadeDAO = new EspecialidadeDAO();
             especialidade.setArea(registro.getAreaAtuacaoEspecialista());
             if (especialidadeDAO.find(especialidade) != null) {
                 return especialidadeDAO.find(especialidade);
@@ -363,7 +368,6 @@ public class RASGraphConverter {
         } else {
             return null;
         }
-
     }
 
     public Doenca buscaDoencaDoRegitro(RegistroDeAtendimento registro) {
@@ -371,17 +375,77 @@ public class RASGraphConverter {
         DoencaDAO doencaDAO = new DoencaDAO();
 
         doenca.setCid(registro.getCidCodigo());
-        doenca.setDescricao(registro.getCidDescricao());
 
         if (doencaDAO.find(doenca) != null) {
             return doencaDAO.find(doenca);
         } else {
+            doenca.setDescricao(registro.getCidDescricao());
             return doencaDAO.save(doenca);
         }
     }
 
-//    public Atendimento converteRegistroParaAtendimento(RegistroDeAtendimento registro) {
-//        Atendimento atendimento = new Atendimento();
-//        
-//    }
+    public Doenca buscaDoencaDaInternacao(RegistroDeAtendimento registro) {
+        Doenca doenca = new Doenca();
+        DoencaDAO doencaDAO = new DoencaDAO();
+
+        doenca.setCid(registro.getCidInternacao());
+
+        return doencaDAO.find(doenca);
+    }
+
+    public UnidadeSaude buscaUnidadeSaudeSolicitanteInternacao(RegistroDeAtendimento registro) {
+        UnidadeSaude unidade = new UnidadeSaude();
+        UnidadeSaudeDAO unidadeDAO = new UnidadeSaudeDAO();
+
+        unidade.setNome(registro.getUnidadeSolicitanteInternacao());
+
+        return unidadeDAO.find(unidade);
+    }
+
+    public UnidadeSaude buscaUnidadeSaudeDestinoInternacao(RegistroDeAtendimento registro) {
+        UnidadeSaude unidade = new UnidadeSaude();
+        UnidadeSaudeDAO unidadeDAO = new UnidadeSaudeDAO();
+
+        unidade.setNome(registro.getUnidadeDestinoInternacao());
+
+        return unidadeDAO.find(unidade);
+    }
+
+    public Internacao buscaInternacaoDoRegistro(RegistroDeAtendimento registro) {
+        if (Util.converteStringSimOuNaoToBoolean(registro.getEncaminhadoAoEspecialista())) {
+            Internacao internacao = new Internacao();
+            InternacaoDAO internacaoDAO = new InternacaoDAO();
+
+            internacao.setDataInternacao(Util.parseLocalToTimestampSql(registro.getDataInternacao()));
+            internacao.setDoenca(buscaDoencaDaInternacao(registro));
+            internacao.setUnidadeSolicitante(buscaUnidadeSaudeSolicitanteInternacao(registro));
+            internacao.setUnidadeDestino(buscaUnidadeSaudeDestinoInternacao(registro));
+            return internacaoDAO.save(internacao);
+        } else {
+            return null;
+        }
+    }
+
+    public void converteRegistroParaAtendimento(RegistroDeAtendimento registro) {
+        Atendimento atendimento = new Atendimento();
+        AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
+
+        atendimento.setDataAtendimento(Util.parseLocalToTimestampSql(registro.getDataAtendimento()));
+        atendimento.setDoenca(buscaDoencaDoRegitro(registro));
+        atendimento.setEncaminhadoParaEspecialidade(buscaEspecialidadeDoRegistro(registro));
+        atendimento.setInternacao(buscaInternacaoDoRegistro(registro));
+        atendimento.setPaciente(buscaPacienteDoRegistro(registro));
+        atendimento.setProcedimento(buscaProcedimentoDoRegistro(registro));
+        atendimento.setProfissionalSaude(buscaProfissionalSaudeDoRegistro(registro));
+        atendimento.setQtdMedicacaoDispensada(Integer.parseInt(registro.getQtdMedicacaoDispensada()));
+        atendimento.setQtdMedicacaoNaoPadrao(Integer.parseInt(registro.getQtdMedicacaoNaoPadronizada()));
+        atendimento.setQtdMedicacaoPrescrita(Integer.parseInt(registro.getQtdMedicacaoPrescrita()));
+        atendimento.setSolicitadoExame(Util.converteStringSimOuNaoToBoolean(registro.getSolicitacaoExame()));
+        atendimento.setUnidadeAtendimento(buscaUnidadeSaudeDoRegistro(registro));
+
+        atendimento = atendimentoDAO.save(atendimento);
+        if (atendimento == null) {
+            System.out.println("Não foi possivel converter o " + registro.toString());
+        }
+    }
 }

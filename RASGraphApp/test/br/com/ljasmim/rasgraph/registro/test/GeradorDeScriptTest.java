@@ -1,6 +1,5 @@
 package br.com.ljasmim.rasgraph.registro.test;
 
-import br.com.ljasmim.rasgraph.connection.RepositoryBaseJPA;
 import br.com.ljasmim.rasgraph.domain.GeradorDeScript;
 import java.io.File;
 import java.io.IOException;
