@@ -81,17 +81,19 @@ public class RASGraphConverter {
             converteRegistroParaAtendimento(registro);
             i++;
             count++;
+            if (count % 100000 == 0) {
+                System.out.println("Em andamento! " + count + " registros convertidos até o momento...");
+            }
         }
-
         System.out.println("Finalizado! " + count + " registros convertidos.");
     }
 
     public List<String> getPathsCsv() {
         List<String> paths = new ArrayList<>();
-        //paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
+        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_dentistas-dados_abertos.csv");
-        //paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
-        //paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
+        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
+        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
         return paths;
     }
 
