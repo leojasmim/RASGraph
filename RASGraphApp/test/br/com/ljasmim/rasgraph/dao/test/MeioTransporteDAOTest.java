@@ -44,6 +44,9 @@ public class MeioTransporteDAOTest {
         meioTransporte.setDescricao("MEIOTRANS_03");
         meioTransporte = meioTransporteDAO.save(meioTransporte);
         assertTrue(meioTransporte == null);
+        meioTransporte = new MeioTransporte();
+        meioTransporte = meioTransporteDAO.save(meioTransporte);
+        assertTrue(meioTransporte == null);
     }
 
     @Test
@@ -63,14 +66,16 @@ public class MeioTransporteDAOTest {
         assertTrue(meiosTransporte.size() == count);
         assertTrue(count == 2);
     }
-    
+
     @Test
-    public void testFind(){
+    public void testFind() {
         meioTransporte = new MeioTransporte();
         meioTransporte.setDescricao("MEIOTRANS_05");
         assertTrue(meioTransporteDAO.find(meioTransporte) == null);
         meioTransporte.setDescricao("MEIOTRANS_01");
         assertTrue(meioTransporteDAO.find(meioTransporte) != null);
         assertTrue(meioTransporteDAO.find(meioTransporte).getId() == 1);
+        meioTransporte = new MeioTransporte();
+        assertTrue(meioTransporteDAO.find(meioTransporte) == null);
     }
 }

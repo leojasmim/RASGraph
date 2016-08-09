@@ -175,7 +175,7 @@ ALTER TABLE meiocomunicacao OWNER TO postgres;
 DROP TABLE IF EXISTS meiotransporte CASCADE;
 CREATE TABLE meiotransporte(
   id bigserial NOT NULL,
-  descricao character varying(255),
+  descricao character varying(255) NOT NULL,
   CONSTRAINT meiotransporte_pkey PRIMARY KEY (id),
   CONSTRAINT uk_dgivqfpxpqya7lejafxc8xgdu UNIQUE (descricao)
 ) WITH (OIDS=FALSE);
