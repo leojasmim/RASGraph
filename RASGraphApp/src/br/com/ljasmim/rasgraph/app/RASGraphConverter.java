@@ -81,7 +81,7 @@ public class RASGraphConverter {
             converteRegistroParaAtendimento(registro);
             i++;
             count++;
-            if (count % 100000 == 0) {
+            if (count % 10000 == 0) {
                 System.out.println("Em andamento! " + count + " registros convertidos até o momento...");
             }
         }
@@ -417,7 +417,6 @@ public class RASGraphConverter {
         if (Util.converteStringSimOuNaoToBoolean(registro.getEncaminhadoParaIntenacao())) {
             Internacao internacao = new Internacao();
             InternacaoDAO internacaoDAO = new InternacaoDAO();
-
             internacao.setDataInternacao(Util.parseLocalToTimestampSql(registro.getDataInternacao()));
             internacao.setDoenca(buscaDoencaDaInternacao(registro));
             internacao.setUnidadeSolicitante(buscaUnidadeSaudeSolicitanteInternacao(registro));

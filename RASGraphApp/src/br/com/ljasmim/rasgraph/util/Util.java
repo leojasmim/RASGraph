@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  * @author LeonardoJasmim
  */
 public class Util {
-    
+
     public static boolean converteStringSimOuNaoToBoolean(String decisao) {
         try {
             decisao = decisao.toUpperCase();
@@ -19,7 +19,7 @@ public class Util {
         }
         return false;
     }
-    
+
     public static Date parseLocalToDateSql(String dataLocal) {
         if (!dataLocal.isEmpty()) {
             String dia = dataLocal.substring(0, 2);
@@ -30,16 +30,18 @@ public class Util {
             return null;
         }
     }
-    
+
     public static Timestamp parseLocalToTimestampSql(String timesLocal) {
+        if (timesLocal == null) {
+            return null;
+        }
         if (!timesLocal.isEmpty()) {
             String dia = timesLocal.substring(0, 2);
             String mes = timesLocal.substring(3, 5);
             String ano = timesLocal.substring(6, 10);
             String tempo = timesLocal.substring(11);
             return Timestamp.valueOf(ano + "-" + mes + "-" + dia + " " + tempo);
-        } else {
-            return null;
         }
+        return null;
     }
 }
