@@ -32,14 +32,19 @@ public class UnidadeSaude implements Serializable {
     @JoinColumn(name = "tipounidade_id")
     private TipoUnidade tipoUnidade;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bairro_id")
+    private Bairro bairro;
+
     public UnidadeSaude() {
     }
 
-    public UnidadeSaude(long id, String cnes, String nome, TipoUnidade tipoUnidade) {
+    public UnidadeSaude(long id, String cnes, String nome, TipoUnidade tipoUnidade, Bairro bairro) {
         this.id = id;
         this.cnes = cnes;
         this.nome = nome;
         this.tipoUnidade = tipoUnidade;
+        this.bairro = bairro;
     }
 
     public long getId() {
@@ -74,16 +79,25 @@ public class UnidadeSaude implements Serializable {
         this.tipoUnidade = tipoUnidade;
     }
 
+    public Bairro getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(Bairro bairro) {
+        this.bairro = bairro;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 37 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 37 * hash + Objects.hashCode(this.cnes);
-        hash = 37 * hash + Objects.hashCode(this.nome);
-        hash = 37 * hash + Objects.hashCode(this.tipoUnidade);
+        hash = 89 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 89 * hash + Objects.hashCode(this.cnes);
+        hash = 89 * hash + Objects.hashCode(this.nome);
+        hash = 89 * hash + Objects.hashCode(this.tipoUnidade);
+        hash = 89 * hash + Objects.hashCode(this.bairro);
         return hash;
     }
-
+ 
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
