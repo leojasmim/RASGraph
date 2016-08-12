@@ -114,7 +114,7 @@ public class AtendimentoDAOTest {
     }
 
     @Test
-    public void testGetAllAndCount(){
+    public void testGetAllAndCount() {
         assertTrue(atendimentoDAO.count() == atendimentoDAO.getAll().size());
         assertTrue(atendimentoDAO.count() == 2);
     }

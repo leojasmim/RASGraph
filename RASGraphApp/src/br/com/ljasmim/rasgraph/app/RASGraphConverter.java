@@ -62,27 +62,40 @@ public class RASGraphConverter {
     }
 
     public void start() throws IOException {
-        GeradorDeScript.createNewDatabase();
-        carregaCsvFile(getPathsCsv());
+        verificaDatabase();
         converterRegistros();
+    }
+
+    public void verificaDatabase() throws IOException {
+        if (!hasDatabase()) {
+            GeradorDeScript.createNewDatabase();
+        }
+        if (isTodosRegistrosConvertidos()) {
+            carregaCsvFile(getPathsCsv());
+        }
     }
 
     public void converterRegistros() {
         RegistroDeAtendimento registro;
         RegistroDeAtendimentoDAO registroDAO = new RegistroDeAtendimentoDAO();
+        AtendimentoDAO atendimentoDAO = new AtendimentoDAO();
 
         int count = 0;
 
-        long i = registroDAO.getFirst().getId();
-        long n = i + registroDAO.count();
+        long i = atendimentoDAO.count() + 1;
+        long n = registroDAO.count();
 
-        while (i < n) {
+        System.out.println("Conversão iniciada... \n"
+                + (i - 1) + " registros convertidos.\n"
+                +  n + " registros para converter...");
+
+        while (i <= n) {
             registro = registroDAO.getByID(i);
             converteRegistroParaAtendimento(registro);
             i++;
             count++;
-            if (count % 10000 == 0) {
-                System.out.println("Em andamento! " + count + " registros convertidos até o momento...");
+            if (count % 100000 == 0) {
+                System.out.println("Em andamento! " + count + " de " + n + " registros convertidos  até o momento...");
             }
         }
         System.out.println("Finalizado! " + count + " registros convertidos.");
@@ -98,6 +111,7 @@ public class RASGraphConverter {
     }
 
     public void carregaCsvFile(List<String> paths) throws IOException {
+        System.out.println("Copia de arquivo csv iniciada...");
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
         String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
@@ -448,5 +462,17 @@ public class RASGraphConverter {
         if (atendimento == null) {
             System.out.println("Não foi possivel converter o " + registro.toString());
         }
+    }
+
+    private boolean hasDatabase() {
+        return RegistroDeAtendimentoDAO.isConexaoValida();
+    }
+
+    private boolean isTodosRegistrosConvertidos() {
+        RegistroDeAtendimentoDAO r = new RegistroDeAtendimentoDAO();
+        AtendimentoDAO a = new AtendimentoDAO();
+        long registros = r.count();
+        long atendimentos = a.count();
+        return registros == atendimentos;
     }
 }
