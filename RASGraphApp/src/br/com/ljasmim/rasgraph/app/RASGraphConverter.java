@@ -47,8 +47,13 @@ import br.com.ljasmim.rasgraph.domain.TratamentoAgua;
 import br.com.ljasmim.rasgraph.domain.UnidadeSaude;
 import br.com.ljasmim.rasgraph.util.Util;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.sql.Date;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -58,7 +63,12 @@ import java.util.List;
  */
 public class RASGraphConverter {
 
-    public RASGraphConverter() {
+    PrintStream consoleLog;
+
+    public RASGraphConverter() throws FileNotFoundException {
+        String logPath = "log\\log" + Util.getNowSqlDateString() + ".txt";
+        consoleLog = new PrintStream(new File(logPath));
+        System.setOut(consoleLog);
     }
 
     public void start() throws IOException {
@@ -68,10 +78,18 @@ public class RASGraphConverter {
 
     public void verificaDatabase() throws IOException {
         if (!hasDatabase()) {
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + "Criação da Base iniciada...");
             GeradorDeScript.createNewDatabase();
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + "Base criada com com sucesso !!!");
         }
         if (isTodosRegistrosConvertidos()) {
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + "Carregamento dos arquivos CSV iniciado...");
             carregaCsvFile(getPathsCsv());
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + "Carregamento dos arquivos CSV concluído !!!");
         }
     }
 
@@ -85,20 +103,24 @@ public class RASGraphConverter {
         long i = atendimentoDAO.count() + 1;
         long n = registroDAO.count();
 
-        System.out.println("Conversão iniciada... \n"
-                + (i - 1) + " registros convertidos.\n"
-                +  n + " registros para converter...");
+        consoleLog.println(Util.getNowLocalDateString() + ": "
+                + "Conversão iniciada... "
+                + (i - 1) + " registros convertidos. "
+                + n + " registros para converter...");
 
         while (i <= n) {
             registro = registroDAO.getByID(i);
             converteRegistroParaAtendimento(registro);
             i++;
             count++;
-            if (count % 100000 == 0) {
-                System.out.println("Em andamento! " + count + " de " + n + " registros convertidos  até o momento...");
+            if (count % 10000 == 0) {
+                consoleLog.println(Util.getNowLocalDateString() + ": "
+                        + "Em andamento! " + count + " de "
+                        + n + " registros convertidos  até o momento...");
             }
         }
-        System.out.println("Finalizado! " + count + " registros convertidos.");
+        consoleLog.println(Util.getNowLocalDateString() + ": "
+                + "Finalizado! " + count + " registros convertidos.");
     }
 
     public List<String> getPathsCsv() {
@@ -111,7 +133,10 @@ public class RASGraphConverter {
     }
 
     public void carregaCsvFile(List<String> paths) throws IOException {
-        System.out.println("Copia de arquivo csv iniciada...");
+        for (String path : paths) {
+            consoleLog.println(Util.getNowLocalDateString()+": "
+                    + path +" preparado para importacao...");
+        }
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
         String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
@@ -460,7 +485,7 @@ public class RASGraphConverter {
 
         atendimento = atendimentoDAO.save(atendimento);
         if (atendimento == null) {
-            System.out.println("Não foi possivel converter o " + registro.toString());
+            consoleLog.println("Não foi possivel converter o " + registro.toString());
         }
     }
 

@@ -2,6 +2,7 @@ package br.com.ljasmim.rasgraph.util;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.Instant;
 
 /**
  * Classe com métodos utilitários
@@ -43,5 +44,14 @@ public class Util {
             return Timestamp.valueOf(ano + "-" + mes + "-" + dia + " " + tempo);
         }
         return null;
+    }
+
+    public static String getNowSqlDateString() {
+        Date date = new Date(Date.from(Instant.now()).getTime());
+        return date.toString() + "_" + date.getTime();
+    }
+
+    public static String getNowLocalDateString() {
+        return Date.from(Instant.now()).toLocaleString();
     }
 }
