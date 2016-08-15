@@ -8,6 +8,7 @@ package br.com.ljasmim.rasgraph.util.test;
 import br.com.ljasmim.rasgraph.util.Util;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.Instant;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -33,6 +34,7 @@ public class UtilTest {
     
     @Test
     public void testParseLocalToTimestampSql(){
+        System.out.println(Util.getNowSqlDateString());
         String ts = "05/03/1984 14:58:30";
         Timestamp t;
         t = Util.parseLocalToTimestampSql("");
@@ -40,6 +42,8 @@ public class UtilTest {
         t = Util.parseLocalToTimestampSql(ts);
         assertTrue(t.toLocaleString().equals(ts));
         System.out.println(t.toLocaleString());
+        System.out.println(Date.from(Instant.now()).toLocaleString());
+        System.out.println(Util.getNowSqlDateString());
     }
     
 }

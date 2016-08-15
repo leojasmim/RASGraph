@@ -277,10 +277,14 @@ CREATE TABLE unidadesaude(
   id bigserial NOT NULL,
   cnes character varying(255),
   nome character varying(255) NOT NULL,
+  bairro_id bigint,
   tipounidade_id bigint,
   CONSTRAINT unidadesaude_pkey PRIMARY KEY (id),
   CONSTRAINT fk_mem0kevpud2xbs15o411pokow FOREIGN KEY (tipounidade_id)
       REFERENCES tipounidade (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fk_ri7bd7n1glbb9idbviowsor1a FOREIGN KEY (bairro_id)
+      REFERENCES bairro (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT uk_s2y1ybsjh9gr8x5mwgrqkylg4 UNIQUE (nome)
 ) WITH (OIDS=FALSE);
