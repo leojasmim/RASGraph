@@ -1,4 +1,4 @@
-colunas nulas
+Possíveis colunas nulas
 L - CÓDIGO CID
 M - DESCRICAO CID
 S - AREA ATUACAO
