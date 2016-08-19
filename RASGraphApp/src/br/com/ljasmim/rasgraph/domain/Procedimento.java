@@ -10,7 +10,8 @@ import javax.persistence.Id;
 
 /**
  * Classe que representa um procedimento realizado pelo profissional de saude
- *
+ * no atendimento
+ * 
  * @author LeonardoJasmim
  */
 @Entity

@@ -1,5 +1,6 @@
 package br.com.ljasmim.rasgraph.dao.test;
 
+import br.com.ljasmim.rasgraph.dao.BairroDAO;
 import br.com.ljasmim.rasgraph.dao.TipoUnidadeDAO;
 import br.com.ljasmim.rasgraph.dao.UnidadeSaudeDAO;
 import br.com.ljasmim.rasgraph.domain.UnidadeSaude;
@@ -17,6 +18,7 @@ public class UnidadeSaudeDAOTest {
     UnidadeSaude unidade;
     UnidadeSaudeDAO unidadeSaudeDAO;
     TipoUnidadeDAO tipoUnidadeDAO;
+    BairroDAO bairroDAO;
 
     public UnidadeSaudeDAOTest() {
     }
@@ -25,7 +27,7 @@ public class UnidadeSaudeDAOTest {
     public void setUp() {
         unidadeSaudeDAO = new UnidadeSaudeDAO();
         tipoUnidadeDAO = new TipoUnidadeDAO();
-
+        bairroDAO = new BairroDAO();
     }
 
     @Test
@@ -48,6 +50,7 @@ public class UnidadeSaudeDAOTest {
         unidade.setCnes("U00003");
         unidade.setNome("UNID_03");
         unidade.setTipoUnidade(tipoUnidadeDAO.getByID(1L));
+        unidade.setBairro(bairroDAO.getByID(1L));
         unidade = unidadeSaudeDAO.save(unidade);
         assertTrue(unidade != null);
 
