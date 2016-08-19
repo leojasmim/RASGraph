@@ -18,7 +18,6 @@ public class BairroDAOTest {
 
     Bairro bairro, buscaBairro;
     BairroDAO bairroDAO;
-    List<Bairro> bairros;
     Municipio municipio;
     MunicipioDAO municipioDAO;
 
@@ -82,9 +81,7 @@ public class BairroDAOTest {
 
     @Test
     public void testGetAllAndCount() {
-        long count = bairroDAO.count();
-        bairros = bairroDAO.getAll();
-        assertTrue(bairros.size() == count);
+        assertTrue(bairroDAO.getAll().size() == bairroDAO.count());
     }
 
     @Test

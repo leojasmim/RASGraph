@@ -73,7 +73,7 @@ DROP TABLE IF EXISTS bairro CASCADE;
 CREATE TABLE bairro(
   id bigserial NOT NULL,
   nome character varying(255) NOT NULL,
-  municipio_id bigint,
+  municipio_id bigint NOT NULL,
   CONSTRAINT bairro_pkey PRIMARY KEY (id),
   CONSTRAINT fk_3rys0fdylc9is4dk0cem4ssu5 FOREIGN KEY (municipio_id)
       REFERENCES municipio (id) MATCH SIMPLE

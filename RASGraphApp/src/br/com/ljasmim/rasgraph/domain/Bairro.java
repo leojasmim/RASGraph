@@ -27,11 +27,11 @@ public class Bairro implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nome", nullable = false)
+    @Column(nullable = false)
     private String nome;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "municipio_id")
+    @JoinColumn(name = "municipio_id", nullable = false)
     private Municipio municipio;
 
     public Bairro(long id, String nome, Municipio municipio) {
@@ -68,11 +68,6 @@ public class Bairro implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return "Bairro{" + "id=" + id + ", nome=" + nome + '}';
-    }
-
-    @Override
     public int hashCode() {
         int hash = 3;
         hash = 23 * hash + (int) (this.id ^ (this.id >>> 32));
@@ -98,4 +93,10 @@ public class Bairro implements Serializable {
         }
         return true;
     }
+    
+    @Override
+    public String toString() {
+        return "Bairro{" + "id=" + id + ", nome=" + nome + ", municipio=" + municipio + '}';
+    }
+
 }
