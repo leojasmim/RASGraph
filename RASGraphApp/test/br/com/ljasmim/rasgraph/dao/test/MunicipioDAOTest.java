@@ -93,15 +93,12 @@ public class MunicipioDAOTest {
         municipio = new Municipio();
         municipio.setNome("MUNICIPIO_04");
         municipio = municipioDAO.find(municipio);
-        assertTrue(municipio == null);
+        assertTrue(municipio.getNome().equals("NAO IDENTIFICADO"));
         
         municipio = new Municipio();
         municipio.setNome("MUNICIPIO_01");
         municipio = municipioDAO.find(municipio);
         assertTrue(municipio != null);
         
-        municipio = new Municipio();
-        municipio = municipioDAO.find(municipio);
-        assertTrue(municipio == null);
     }
 }

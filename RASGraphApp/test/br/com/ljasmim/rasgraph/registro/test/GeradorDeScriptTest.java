@@ -1,6 +1,7 @@
 package br.com.ljasmim.rasgraph.registro.test;
 
 import br.com.ljasmim.rasgraph.domain.GeradorDeScript;
+import br.com.ljasmim.rasgraph.util.Util;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,13 +42,27 @@ public class GeradorDeScriptTest {
 
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_dentistas-dados_abertos.csv");
 
-        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToRegistroAtendimento(paths);
         File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
         Assert.assertTrue(scriptSql.exists());
 
         File scriptBatch = GeradorDeScript.getBatchForRunSqlFile(scriptSql, batchPath);
         Assert.assertTrue(GeradorDeScript.runBatchFile(scriptBatch));
 
+        scriptBatch.delete();
+        scriptSql.delete();
+    }
+
+    @Test
+    public void testGerarCopyCSvMunicipio() throws IOException {
+        List<String> paths = new ArrayList<>();
+        paths.add(Util.getAbsolutePath("csv/ibge_municipios_2015.csv"));
+        String sqlPath = "dist/copyCsv.sql";
+        String batchPath = "dist/copyCsv.bat";
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToMunicipio(paths);
+        File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
+        File scriptBatch = GeradorDeScript.getBatchForRunSqlFile(scriptSql, batchPath);
+        GeradorDeScript.runBatchFile(scriptBatch);
         scriptBatch.delete();
         scriptSql.delete();
     }
@@ -60,7 +75,7 @@ public class GeradorDeScriptTest {
 
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
 
-        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToRegistroAtendimento(paths);
         File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
         Assert.assertTrue(scriptSql.exists());
 
@@ -79,7 +94,7 @@ public class GeradorDeScriptTest {
 
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
 
-        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToRegistroAtendimento(paths);
         File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
         Assert.assertTrue(scriptSql.exists());
 
@@ -98,7 +113,7 @@ public class GeradorDeScriptTest {
 
         paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
 
-        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToRegistroAtendimento(paths);
         File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
         Assert.assertTrue(scriptSql.exists());
 

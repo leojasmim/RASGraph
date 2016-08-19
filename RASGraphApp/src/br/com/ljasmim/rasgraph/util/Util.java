@@ -1,5 +1,6 @@
 package br.com.ljasmim.rasgraph.util;
 
+import java.io.File;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -53,5 +54,13 @@ public class Util {
 
     public static String getNowLocalDateString() {
         return Date.from(Instant.now()).toLocaleString();
+    }
+    
+    public static String getAbsolutePath(String relativePath){
+        File f = new File("csv/ibge_municipios_2015.csv");
+        if (f.exists()) {
+            return f.getAbsolutePath();
+        }
+        return null;
     }
 }

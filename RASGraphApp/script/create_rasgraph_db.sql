@@ -64,8 +64,8 @@ CREATE TABLE municipio(
   regiaofederal character varying(255) NOT NULL,
   uf character varying(255) NOT NULL,
   CONSTRAINT municipio_pkey PRIMARY KEY (id),
-  CONSTRAINT uk_mlxb5uxlqsvcq4qpjppfxe87q UNIQUE (ibge),
-  CONSTRAINT uk_pas4awibw1tkx1cg5ga055gmm UNIQUE (nome)
+  CONSTRAINT uk_63kmnlovru64gvfdgw3k83hit UNIQUE (ibge, nome),
+  CONSTRAINT uk_mlxb5uxlqsvcq4qpjppfxe87q UNIQUE (ibge)
 )WITH(OIDS=FALSE);
 ALTER TABLE municipio OWNER TO postgres;
 

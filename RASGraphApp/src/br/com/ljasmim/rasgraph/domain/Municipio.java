@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  * Classe que representa a entidade Municipio
@@ -14,6 +16,8 @@ import javax.persistence.Id;
  * @author LeonardoJasmim
  */
 @Entity
+@Table(uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"ibge", "nome"})})
 public class Municipio implements Serializable {
 
     @Id
@@ -32,7 +36,7 @@ public class Municipio implements Serializable {
     @Column(nullable = false)
     private String uf;
     
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String nome;
 
     private int populacao2015;

@@ -50,10 +50,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.sql.Date;
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -87,7 +84,8 @@ public class RASGraphConverter {
         if (isTodosRegistrosConvertidos()) {
             consoleLog.println(Util.getNowLocalDateString() + ": "
                     + "Carregamento dos arquivos CSV iniciado...");
-            carregaCsvFile(getPathsCsv());
+            carregaCsvFileWithRegistroAtendimento(getPathsCsvWithRegistroAtendimento());
+            carregaCsvFileWithMunicipio(getPathsCsvWithMunicipio());
             consoleLog.println(Util.getNowLocalDateString() + ": "
                     + "Carregamento dos arquivos CSV concluído !!!");
         }
@@ -123,23 +121,38 @@ public class RASGraphConverter {
                 + "Finalizado! " + count + " registros convertidos.");
     }
 
-    public List<String> getPathsCsv() {
+    public List<String> getPathsCsvWithRegistroAtendimento() {
         List<String> paths = new ArrayList<>();
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_dentistas-dados_abertos.csv");
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_enfermeiros-dados_abertos.csv");
-        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_outrosprofissionais-dados_abertos.csv");
+//        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
+        paths.add("csv/saude_dentistas-dados_abertos.csv");
+//        paths.add("csv/saude_enfermeiros-dados_abertos.csv");
+//        paths.add("csv/saude_outrosprofissionais-dados_abertos.csv");
         return paths;
     }
-
-    public void carregaCsvFile(List<String> paths) throws IOException {
+    
+    public void carregaCsvFileWithRegistroAtendimento(List<String> paths) throws IOException {
         for (String path : paths) {
             consoleLog.println(Util.getNowLocalDateString()+": "
                     + path +" preparado para importacao...");
         }
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
-        String scriptString = GeradorDeScript.getScriptStringForCopyCvs(paths);
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToRegistroAtendimento(paths);
+        File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
+        File scriptBatch = GeradorDeScript.getBatchForRunSqlFile(scriptSql, batchPath);
+        GeradorDeScript.runBatchFile(scriptBatch);
+        scriptBatch.delete();
+        scriptSql.delete();
+    }
+    
+    public void carregaCsvFileWithMunicipio(List<String> paths) throws IOException {
+        for (String path : paths) {
+            consoleLog.println(Util.getNowLocalDateString()+": "
+                    + path +" preparado para importacao...");
+        }
+        String sqlPath = "dist/copyCsv.sql";
+        String batchPath = "dist/copyCsv.bat";
+        String scriptString = GeradorDeScript.getScriptStringForCopyCvsToMunicipio(paths);
         File scriptSql = GeradorDeScript.getScriptSqlFile(scriptString, sqlPath);
         File scriptBatch = GeradorDeScript.getBatchForRunSqlFile(scriptSql, batchPath);
         GeradorDeScript.runBatchFile(scriptBatch);
@@ -147,6 +160,12 @@ public class RASGraphConverter {
         scriptSql.delete();
     }
 
+    public List<String> getPathsCsvWithMunicipio() {
+        List<String> paths = new ArrayList<>();
+        paths.add("csv/ibge_municipios_2015.csv");
+        return paths;
+    }
+    
     public Municipio buscaMunicipioDoRegistro(RegistroDeAtendimento registro) {
         Municipio m = new Municipio();
         MunicipioDAO mDAO = new MunicipioDAO();
@@ -156,7 +175,8 @@ public class RASGraphConverter {
         if (mDAO.find(m) != null) {
             return mDAO.find(m);
         } else {
-            return mDAO.save(m);
+            m.setIbge(0);
+            return mDAO.getByID(1L);
         }
     }
 

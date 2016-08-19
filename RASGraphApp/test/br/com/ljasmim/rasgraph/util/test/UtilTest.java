@@ -6,6 +6,7 @@
 package br.com.ljasmim.rasgraph.util.test;
 
 import br.com.ljasmim.rasgraph.util.Util;
+import java.io.File;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -46,4 +47,8 @@ public class UtilTest {
         System.out.println(Util.getNowSqlDateString());
     }
     
+    @Test
+    public void getFilePath(){
+        System.out.println(Util.getAbsolutePath("csv/ibge_municipios_2015.csv"));
+    }
 }

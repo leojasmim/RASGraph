@@ -168,11 +168,11 @@ public class GeradorDeScript {
      * Gera o conteudo do script sql para copiar os arquivos .csv para a tabela
      * registro de atendimentos
      *
-     * @param paths Lista com caminhos para os arquivos .cvs
+     * @param paths Lista com caminhos para os arquivos .cvs com registros de atendimento
      *
-     * @return Conteúdo do script para criação da rasgraph_db
+     * @return Conteúdo do script para importação de registros de atendimento
      */
-    public static String getScriptStringForCopyCvs(List<String> paths) {
+    public static String getScriptStringForCopyCvsToRegistroAtendimento(List<String> paths) {
         String script = "\\c rasgraph_db \n\n";
         for (String path : paths) {
             script = script
@@ -185,6 +185,26 @@ public class GeradorDeScript {
                     + "FROM '" + path + "' using delimiters ';' WITH NULL AS '' encoding 'latin1' CSV HEADER;\n\n";
         }
 
+        script += "vacuum;\n\n";
+        return script;
+    }
+    
+    /**
+     * Gera o conteudo do script sql para copiar os arquivos .csv para a tabela
+     * municipio
+     *
+     * @param paths Lista com caminhos para os arquivos .cvs com municipios
+     *
+     * @return Conteúdo do script para importação de municipios
+     */
+    public static String getScriptStringForCopyCvsToMunicipio(List<String> paths) {
+        String script = "\\c rasgraph_db \n\n";
+        for (String path : paths) {
+            script = script
+                    + "COPY municipio\n"
+                    + "(ibge,regiaofederal,codigouf,uf,nome,populacao2015)\n"
+                    + "FROM '" + path + "' using delimiters ';' WITH NULL AS '' encoding 'latin1' CSV HEADER;\n\n";
+        }
         script += "vacuum;\n\n";
         return script;
     }

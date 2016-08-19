@@ -15,12 +15,14 @@ public class MunicipioDAO extends RepositoryBaseJPA<Municipio, Long> {
         super(Municipio.class);
     }
 
+    //MODIFICAR FIND
     public Municipio find(Municipio municipio) {
         try {
             return (Municipio) getEntityManager().createQuery("Select m from Municipio AS m "
                     + "where m.nome like '" + municipio.getNome() + "'").getSingleResult();
         } catch (Exception e) {
-            return null;
+            return (Municipio) getEntityManager().createQuery("Select m from Municipio AS m "
+                    + "where m.ibge = 0000000").getSingleResult();
         }
     }
 }
