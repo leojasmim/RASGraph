@@ -29,28 +29,48 @@ public class MunicipioDAOTest {
     @Test
     public void testSave() {
         municipio = new Municipio();
+        municipio.setIbge(1111111);
+        municipio.setRegiaoFederal("1 - Regiao Um");
+        municipio.setCodigoUf(1);
+        municipio.setUf("UM");
+        municipio.setPopulacao2015(111111);
         municipio.setNome("MUNICIPIO_01");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio.getId() != 0);
         
         municipio = new Municipio();
+        municipio.setIbge(2222222);
+        municipio.setRegiaoFederal("2 - Regiao Dois");
+        municipio.setCodigoUf(2);
+        municipio.setUf("DO");
+        municipio.setPopulacao2015(222222);
         municipio.setNome("MUNICIPIO_02");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio.getId() != 0);
         
         municipio = new Municipio();
+        municipio.setIbge(3333333);
+        municipio.setRegiaoFederal("3 - Regiao Tres");
+        municipio.setCodigoUf(3);
+        municipio.setUf("TR");
+        municipio.setPopulacao2015(3333333);
         municipio.setNome("MUNICIPIO_03");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio.getId() != 0);
         
         municipio = new Municipio();
+        municipio.setIbge(3333333);
+        municipio.setRegiaoFederal("3 - Regiao Tres");
+        municipio.setCodigoUf(3);
+        municipio.setUf("TR");
+        municipio.setPopulacao2015(3333333);
         municipio.setNome("MUNICIPIO_03");
         municipio = municipioDAO.save(municipio);
-        assertTrue(municipio == null);  
+        assertTrue(municipio == null);
         
         municipio = new Municipio();
         municipio = municipioDAO.save(municipio);
-        assertTrue(municipio == null); 
+        assertTrue(municipio == null);
     }
     
     @Test
@@ -65,9 +85,7 @@ public class MunicipioDAOTest {
     
     @Test
     public void testGetAllAndCount(){
-        long count =  municipioDAO.count();
-        municipios = municipioDAO.getAll();
-        assertTrue(municipios.size() == count);
+        assertTrue(municipioDAO.getAll().size() == municipioDAO.count());
     }
     
     @Test

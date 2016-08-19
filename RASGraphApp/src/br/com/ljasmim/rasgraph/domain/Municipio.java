@@ -20,16 +20,34 @@ public class Municipio implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "nome", unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
+    private int ibge;
+    
+    @Column(nullable = false)
+    private String regiaoFederal;
+    
+    @Column(nullable = false)
+    private int codigoUf;
+    
+    @Column(nullable = false)
+    private String uf;
+    
+    @Column(unique = true, nullable = false)
     private String nome;
 
-    public Municipio() {
+    private int populacao2015;
 
+    public Municipio() {
     }
 
-    public Municipio(long id, String nome) {
+    public Municipio(long id, int ibge, String regiaoFederal, int codigoUf, String uf, String nome, int populacao2015) {
         this.id = id;
+        this.ibge = ibge;
+        this.regiaoFederal = regiaoFederal;
+        this.codigoUf = codigoUf;
+        this.uf = uf;
         this.nome = nome;
+        this.populacao2015 = populacao2015;
     }
 
     public long getId() {
@@ -40,6 +58,38 @@ public class Municipio implements Serializable {
         this.id = id;
     }
 
+    public int getIbge() {
+        return ibge;
+    }
+
+    public void setIbge(int ibge) {
+        this.ibge = ibge;
+    }
+
+    public String getRegiaoFederal() {
+        return regiaoFederal;
+    }
+
+    public void setRegiaoFederal(String regiaoFederal) {
+        this.regiaoFederal = regiaoFederal;
+    }
+
+    public int getCodigoUf() {
+        return codigoUf;
+    }
+
+    public void setCodigoUf(int codigoUf) {
+        this.codigoUf = codigoUf;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -48,9 +98,25 @@ public class Municipio implements Serializable {
         this.nome = nome;
     }
 
+    public int getPopulacao2015() {
+        return populacao2015;
+    }
+
+    public void setPopulacao2015(int populacao2015) {
+        this.populacao2015 = populacao2015;
+    }
+
     @Override
-    public String toString() {
-        return "Municipio{" + "id=" + id + ", nome=" + nome + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 29 * hash + this.ibge;
+        hash = 29 * hash + Objects.hashCode(this.regiaoFederal);
+        hash = 29 * hash + this.codigoUf;
+        hash = 29 * hash + Objects.hashCode(this.uf);
+        hash = 29 * hash + Objects.hashCode(this.nome);
+        hash = 29 * hash + this.populacao2015;
+        return hash;
     }
 
     @Override
@@ -62,17 +128,15 @@ public class Municipio implements Serializable {
             return false;
         }
         final Municipio other = (Municipio) obj;
-        if (!Objects.equals(this.nome, other.nome)) {
+        if (this.ibge != other.ibge) {
             return false;
         }
         return true;
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 71 * hash + Objects.hashCode(this.nome);
-        return hash;
+    public String toString() {
+        return "Municipio{" + "id=" + id + ", ibge=" + ibge + ", uf=" + uf + ", nome=" + nome + '}';
     }
+        
 }
