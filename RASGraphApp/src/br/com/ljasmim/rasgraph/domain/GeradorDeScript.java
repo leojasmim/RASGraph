@@ -184,7 +184,6 @@ public class GeradorDeScript {
                     + "meio_transp,municipio,bairro)\n"
                     + "FROM '" + path + "' using delimiters ';' WITH NULL AS '' encoding 'latin1' CSV HEADER;\n\n";
         }
-
         script += "vacuum;\n\n";
         return script;
     }
@@ -216,7 +215,7 @@ public class GeradorDeScript {
         File scriptBatch = getBatchForRunSqlFile(scriptSql, batchPath);
         runBatchFile(scriptBatch);
         if(!scriptBatch.delete()){
-            System.out.println("Problema para deletar o script .bat");;
+            System.out.println("Problema para deletar o script .bat");
         }
     }
 }

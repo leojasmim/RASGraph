@@ -57,7 +57,7 @@ public class Util {
     }
     
     public static String getAbsolutePath(String relativePath){
-        File f = new File("csv/ibge_municipios_2015.csv");
+        File f = new File(relativePath);
         if (f.exists()) {
             return f.getAbsolutePath();
         }

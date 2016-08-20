@@ -123,17 +123,19 @@ public class RASGraphConverter {
 
     public List<String> getPathsCsvWithRegistroAtendimento() {
         List<String> paths = new ArrayList<>();
-//        paths.add("C:\\Users\\leoja\\Desktop\\teste\\saude_medicos-dados_abertos.csv");
-        paths.add("csv/saude_dentistas-dados_abertos.csv");
-//        paths.add("csv/saude_enfermeiros-dados_abertos.csv");
-//        paths.add("csv/saude_outrosprofissionais-dados_abertos.csv");
+
+//        paths.add(Util.getAbsolutePath("csv/saude_medicos-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_dentistas-dados_abertos.csv"));
+//        paths.add(Util.getAbsolutePath("csv/saude_enfermeiros-dados_abertos.csv"));
+//        paths.add(Util.getAbsolutePath("csv/saude_outrosprofissionais-dados_abertos.csv"));
+
         return paths;
     }
-    
+
     public void carregaCsvFileWithRegistroAtendimento(List<String> paths) throws IOException {
         for (String path : paths) {
-            consoleLog.println(Util.getNowLocalDateString()+": "
-                    + path +" preparado para importacao...");
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + path + " preparado para importacao...");
         }
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
@@ -144,11 +146,17 @@ public class RASGraphConverter {
         scriptBatch.delete();
         scriptSql.delete();
     }
-    
+
+    public List<String> getPathsCsvWithMunicipio() {
+        List<String> paths = new ArrayList<>();
+        paths.add(Util.getAbsolutePath("csv/ibge_municipios_2015.csv"));
+        return paths;
+    }
+
     public void carregaCsvFileWithMunicipio(List<String> paths) throws IOException {
         for (String path : paths) {
-            consoleLog.println(Util.getNowLocalDateString()+": "
-                    + path +" preparado para importacao...");
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + path + " preparado para importacao...");
         }
         String sqlPath = "dist/copyCsv.sql";
         String batchPath = "dist/copyCsv.bat";
@@ -160,12 +168,6 @@ public class RASGraphConverter {
         scriptSql.delete();
     }
 
-    public List<String> getPathsCsvWithMunicipio() {
-        List<String> paths = new ArrayList<>();
-        paths.add("csv/ibge_municipios_2015.csv");
-        return paths;
-    }
-    
     public Municipio buscaMunicipioDoRegistro(RegistroDeAtendimento registro) {
         Municipio m = new Municipio();
         MunicipioDAO mDAO = new MunicipioDAO();
