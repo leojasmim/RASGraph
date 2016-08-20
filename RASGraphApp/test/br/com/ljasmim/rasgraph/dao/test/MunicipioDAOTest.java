@@ -37,7 +37,7 @@ public class MunicipioDAOTest {
         municipio.setNome("MUNICIPIO_01");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio.getId() != 0);
-        
+
         municipio = new Municipio();
         municipio.setIbge(2222222);
         municipio.setRegiaoFederal("2 - Regiao Dois");
@@ -47,7 +47,7 @@ public class MunicipioDAOTest {
         municipio.setNome("MUNICIPIO_02");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio.getId() != 0);
-        
+
         municipio = new Municipio();
         municipio.setIbge(3333333);
         municipio.setRegiaoFederal("3 - Regiao Tres");
@@ -57,7 +57,7 @@ public class MunicipioDAOTest {
         municipio.setNome("MUNICIPIO_03");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio.getId() != 0);
-        
+
         municipio = new Municipio();
         municipio.setIbge(3333333);
         municipio.setRegiaoFederal("3 - Regiao Tres");
@@ -67,38 +67,49 @@ public class MunicipioDAOTest {
         municipio.setNome("MUNICIPIO_03");
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio == null);
-        
+
         municipio = new Municipio();
         municipio = municipioDAO.save(municipio);
         assertTrue(municipio == null);
     }
-    
+
     @Test
-    public void testRemove(){
+    public void testRemove() {
         municipio = municipioDAO.getByID(3L);
-        if(municipio != null){
+        if (municipio != null) {
             municipioDAO.remove(municipio);
         }
         municipio = municipioDAO.getByID(3L);
         assertTrue(municipio == null);
     }
-    
+
     @Test
-    public void testGetAllAndCount(){
+    public void testGetAllAndCount() {
         assertTrue(municipioDAO.getAll().size() == municipioDAO.count());
     }
-    
+
     @Test
-    public void testFind(){
+    public void testFind() {
         municipio = new Municipio();
         municipio.setNome("MUNICIPIO_04");
-        municipio = municipioDAO.find(municipio);
-        assertTrue(municipio.getNome().equals("NAO IDENTIFICADO"));
+        municipios = municipioDAO.find(municipio);
+        if (municipios.isEmpty()) {
+            municipio = municipioDAO.getByID(1L);
+        }
+        assertTrue(municipio.getNome().equals("INDETERMINADO"));
+
+        municipio = new Municipio();
+        municipio.setNome("VICOSA");
+        municipios = municipioDAO.find(municipio);
+        if (municipios.size() > 1) {
+            municipio = municipioDAO.getByID(1L);
+        }
+        assertTrue(municipio.getNome().equals("INDETERMINADO"));
         
         municipio = new Municipio();
-        municipio.setNome("MUNICIPIO_01");
-        municipio = municipioDAO.find(municipio);
-        assertTrue(municipio != null);
-        
+        municipio.setNome("TERESOPOLIS");
+        municipios = municipioDAO.find(municipio);
+        municipio = municipios.get(0);
+        assertTrue(municipio.getUf().equals("RJ"));
     }
 }

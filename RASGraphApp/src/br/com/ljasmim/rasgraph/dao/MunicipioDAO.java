@@ -2,6 +2,7 @@ package br.com.ljasmim.rasgraph.dao;
 
 import br.com.ljasmim.rasgraph.connection.RepositoryBaseJPA;
 import br.com.ljasmim.rasgraph.domain.Municipio;
+import java.util.List;
 
 /**
  * Classe padrão DAO(Data Access Object) que herda de RepositoryBaseJPA e
@@ -16,13 +17,12 @@ public class MunicipioDAO extends RepositoryBaseJPA<Municipio, Long> {
     }
 
     //MODIFICAR FIND
-    public Municipio find(Municipio municipio) {
+    public List<Municipio> find(Municipio municipio) {
         try {
-            return (Municipio) getEntityManager().createQuery("Select m from Municipio AS m "
-                    + "where m.nome like '" + municipio.getNome() + "'").getSingleResult();
+            return getEntityManager().createQuery("Select m from Municipio AS m "
+                    + "where m.nome like '" + municipio.getNome() + "'").getResultList();
         } catch (Exception e) {
-            return (Municipio) getEntityManager().createQuery("Select m from Municipio AS m "
-                    + "where m.ibge = 0000000").getSingleResult();
+            return null;
         }
     }
 }
