@@ -124,10 +124,10 @@ public class RASGraphConverter {
     public List<String> getPathsCsvWithRegistroAtendimento() {
         List<String> paths = new ArrayList<>();
 
-//        paths.add(Util.getAbsolutePath("csv/saude_medicos-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_medicos-dados_abertos.csv"));
         paths.add(Util.getAbsolutePath("csv/saude_dentistas-dados_abertos.csv"));
-//        paths.add(Util.getAbsolutePath("csv/saude_enfermeiros-dados_abertos.csv"));
-//        paths.add(Util.getAbsolutePath("csv/saude_outrosprofissionais-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_enfermeiros-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_outrosprofissionais-dados_abertos.csv"));
 
         return paths;
     }
