@@ -16,7 +16,6 @@ public class MunicipioDAO extends RepositoryBaseJPA<Municipio, Long> {
         super(Municipio.class);
     }
 
-    //MODIFICAR FIND
     public List<Municipio> find(Municipio municipio) {
         try {
             return getEntityManager().createQuery("Select m from Municipio AS m "

@@ -98,6 +98,7 @@ public class MunicipioDAOTest {
         }
         assertTrue(municipio.getNome().equals("INDETERMINADO"));
 
+
         municipio = new Municipio();
         municipio.setNome("VICOSA");
         municipios = municipioDAO.find(municipio);

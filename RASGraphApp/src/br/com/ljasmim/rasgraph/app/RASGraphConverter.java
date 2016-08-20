@@ -170,16 +170,19 @@ public class RASGraphConverter {
 
     public Municipio buscaMunicipioDoRegistro(RegistroDeAtendimento registro) {
         Municipio m = new Municipio();
+        List<Municipio> municipios;
         MunicipioDAO mDAO = new MunicipioDAO();
 
         m.setNome(registro.getMunicipio());
 
-        if (mDAO.find(m) != null) {
-            return mDAO.find(m);
-        } else {
-            m.setIbge(0);
-            return mDAO.getByID(1L);
+        municipios = mDAO.find(m);
+
+        if (municipios.isEmpty() || municipios.size() > 1) {
+            getMessageMunicipioIndeterminado(registro, municipios.size());
+            m.setNome("INDETERMINADO");
+            return mDAO.find(m).get(0);
         }
+        return municipios.get(0);
     }
 
     public Bairro buscaBairroDoRegistro(RegistroDeAtendimento registro) {
@@ -521,5 +524,11 @@ public class RASGraphConverter {
         long registros = r.count();
         long atendimentos = a.count();
         return registros == atendimentos;
+    }
+
+    private void getMessageMunicipioIndeterminado(RegistroDeAtendimento registro, int ocorrencias) {
+        consoleLog.println(Util.getNowLocalDateString() + ": "
+                + "Não foi possivel determinar o municipio do "
+                + registro.toString() + ". Ocorrências encontradas: " + ocorrencias);
     }
 }

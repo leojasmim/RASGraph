@@ -494,6 +494,8 @@ public class RegistroDeAtendimento implements Serializable {
 
     @Override
     public String toString() {
-        return "RegistroDeAtendimento{" + "id=" + id + ", dataAtendimento=" + dataAtendimento + '}';
+        return "RegistroDeAtendimento{" + "id=" + id + ", municipio=" + municipio + '}';
     }
+
+   
 }
