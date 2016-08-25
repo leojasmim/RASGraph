@@ -6,7 +6,6 @@
 package br.com.ljasmim.rasgraph.util.test;
 
 import br.com.ljasmim.rasgraph.util.Util;
-import java.io.File;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.Instant;
