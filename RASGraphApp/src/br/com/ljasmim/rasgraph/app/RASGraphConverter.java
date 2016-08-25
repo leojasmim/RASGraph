@@ -46,14 +46,12 @@ import br.com.ljasmim.rasgraph.domain.TipoUnidade;
 import br.com.ljasmim.rasgraph.domain.TratamentoAgua;
 import br.com.ljasmim.rasgraph.domain.UnidadeSaude;
 import br.com.ljasmim.rasgraph.util.Util;
-import java.awt.TrayIcon;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  * Classe que converte um registro de atendimento para a base do RASGraph
@@ -126,10 +124,10 @@ public class RASGraphConverter {
     public List<String> getPathsCsvWithRegistroAtendimento() {
         List<String> paths = new ArrayList<>();
 
-//        paths.add(Util.getAbsolutePath("csv/saude_medicos-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_medicos-dados_abertos.csv"));
         paths.add(Util.getAbsolutePath("csv/saude_dentistas-dados_abertos.csv"));
-//        paths.add(Util.getAbsolutePath("csv/saude_enfermeiros-dados_abertos.csv"));
-//        paths.add(Util.getAbsolutePath("csv/saude_outrosprofissionais-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_enfermeiros-dados_abertos.csv"));
+        paths.add(Util.getAbsolutePath("csv/saude_outrosprofissionais-dados_abertos.csv"));
 
         return paths;
     }
@@ -192,7 +190,7 @@ public class RASGraphConverter {
         BairroDAO bDAO = new BairroDAO();
 
         b.setMunicipio(buscaMunicipioDoRegistro(registro));
-        b.setNome(registro.getBairro());
+        b.setNome(Util.removeExcessSpaces(registro.getBairro()));
 
         if (bDAO.find(b) != null) {
             return bDAO.find(b);

@@ -18,23 +18,23 @@ import static org.junit.Assert.*;
  * @author LeonardoJasmim
  */
 public class UtilTest {
-    
+
     public UtilTest() {
     }
 
     @Test
-    public void testParseLocalToDateSql(){
+    public void testParseLocalToDateSql() {
         String ts = "05/03/1984 00:00:00";
         Date d;
         d = Util.parseLocalToDateSql("");
         assertTrue(d == null);
         d = Util.parseLocalToDateSql(ts);
         assertTrue(d.toLocaleString().equals(ts));
-        
+
     }
-    
+
     @Test
-    public void testParseLocalToTimestampSql(){
+    public void testParseLocalToTimestampSql() {
         System.out.println(Util.getNowSqlDateString());
         String ts = "05/03/1984 14:58:30";
         Timestamp t;
@@ -46,9 +46,35 @@ public class UtilTest {
         System.out.println(Date.from(Instant.now()).toLocaleString());
         System.out.println(Util.getNowSqlDateString());
     }
-    
+
     @Test
-    public void getFilePath(){
+    public void testGetFilePath() {
         System.out.println(Util.getAbsolutePath("csv/ibge_municipios_2015.csv"));
+    }
+
+    @Test
+    public void testRemoveExcessSpaces() {
+        String a = "Leonardo       ";
+        assertTrue(a.length() == 15);
+        a = Util.removeExcessSpaces(a);
+        assertTrue(a.length() == 8);
+        assertTrue(a.equals("Leonardo"));
+
+        a = "     ";
+        assertTrue(a.length() == 5);
+        a = Util.removeExcessSpaces(a);
+        assertTrue(a.length() == 0);
+        assertTrue(a.equals(""));
+
+        a = null;
+        a = Util.removeExcessSpaces(a);
+        assertTrue(a.length() == 0);
+        assertTrue(a.equals(""));
+        
+        a = "ABC DEF  ";
+        assertTrue(a.length() == 9);
+        a = Util.removeExcessSpaces(a);
+        assertTrue(a.length() == 7);
+        assertTrue(a.equals("ABC DEF"));
     }
 }

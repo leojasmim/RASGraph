@@ -55,12 +55,27 @@ public class Util {
     public static String getNowLocalDateString() {
         return Date.from(Instant.now()).toLocaleString();
     }
-    
-    public static String getAbsolutePath(String relativePath){
+
+    public static String getAbsolutePath(String relativePath) {
         File f = new File(relativePath);
         if (f.exists()) {
             return f.getAbsolutePath();
         }
         return null;
+    }
+
+    public static String removeExcessSpaces(String a) {
+        if (a != null) {
+            int i = a.length() - 1;
+            while (a.charAt(i) == ' ') {
+                a = a.substring(0, i);
+                i = a.length() - 1;
+                if (i < 0) {
+                    return a;
+                }
+            }
+            return a;
+        }
+        return "";
     }
 }
