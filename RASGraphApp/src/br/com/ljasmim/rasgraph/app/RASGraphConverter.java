@@ -104,7 +104,7 @@ public class RASGraphConverter {
         consoleLog.println(Util.getNowLocalDateString() + ": "
                 + "Conversão iniciada... "
                 + (i - 1) + " registros convertidos. "
-                + n + " registros para converter...");
+                + (n-i-1) + " registros para converter...");
 
         while (i <= n) {
             registro = registroDAO.getByID(i);
@@ -177,7 +177,18 @@ public class RASGraphConverter {
 
         municipios = mDAO.find(m);
 
-        if (municipios.isEmpty() || municipios.size() > 1) {
+        if (municipios.isEmpty()) {
+            getMessageMunicipioIndeterminado(registro, municipios.size());
+            m.setNome("INDETERMINADO");
+            return mDAO.find(m).get(0);
+        }
+        
+        if (municipios.size() > 1) {
+            for (Municipio municipio : municipios) {
+                if(isMunicipioDaRegiaoSul(municipio)){
+                    return municipio;
+                }
+            }
             getMessageMunicipioIndeterminado(registro, municipios.size());
             m.setNome("INDETERMINADO");
             return mDAO.find(m).get(0);
@@ -530,5 +541,9 @@ public class RASGraphConverter {
         consoleLog.println(Util.getNowLocalDateString() + ": "
                 + "Não foi possivel determinar o municipio do "
                 + registro.toString() + ". Ocorrências encontradas: " + ocorrencias);
+    }
+
+    private boolean isMunicipioDaRegiaoSul(Municipio municipio) {
+        return municipio.getCodigoUf() >= 41 && municipio.getCodigoUf() <= 43;
     }
 }

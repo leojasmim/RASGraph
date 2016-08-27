@@ -76,4 +76,5 @@ public class UtilTest {
         assertTrue(a.length() == 7);
         assertTrue(a.equals("ABC DEF"));
     }
+    
 }
