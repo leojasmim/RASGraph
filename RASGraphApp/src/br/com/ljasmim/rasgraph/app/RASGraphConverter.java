@@ -103,8 +103,7 @@ public class RASGraphConverter {
 
         consoleLog.println(Util.getNowLocalDateString() + ": "
                 + "Conversão iniciada... "
-                + (i - 1) + " registros convertidos. "
-                + (n-i-1) + " registros para converter...");
+                + (i - 1) + " de " + n + " registros convertidos");
 
         while (i <= n) {
             registro = registroDAO.getByID(i);
@@ -182,10 +181,10 @@ public class RASGraphConverter {
             m.setNome("INDETERMINADO");
             return mDAO.find(m).get(0);
         }
-        
+
         if (municipios.size() > 1) {
             for (Municipio municipio : municipios) {
-                if(isMunicipioDaRegiaoSul(municipio)){
+                if (isMunicipioDaRegiaoSul(municipio)) {
                     return municipio;
                 }
             }

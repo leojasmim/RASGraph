@@ -1,0 +1,607 @@
+26/08/2016 22:49:37: Criação da Base iniciada...
+CREATE DATABASE
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+26/08/2016 22:49:49: Base criada com com sucesso !!!
+26/08/2016 22:49:51: Carregamento dos arquivos CSV iniciado...
+26/08/2016 22:49:51: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\saude_medicos-dados_abertos.csv preparado para importacao...
+26/08/2016 22:49:51: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\saude_dentistas-dados_abertos.csv preparado para importacao...
+26/08/2016 22:49:51: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\saude_enfermeiros-dados_abertos.csv preparado para importacao...
+26/08/2016 22:49:51: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\saude_outrosprofissionais-dados_abertos.csv preparado para importacao...
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+COPY 753183
+COPY 248
+COPY 646957
+COPY 31229
+VACUUM
+26/08/2016 22:51:37: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\ibge_municipios_2015.csv preparado para importacao...
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+COPY 5571
+VACUUM
+26/08/2016 22:51:39: Carregamento dos arquivos CSV concluído !!!
+26/08/2016 22:51:39: Conversão iniciada... 0 de 1431617 registros convertidos
+26/08/2016 22:51:41: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=44, municipio=BELEM}. Ocorrências encontradas: 3
+26/08/2016 22:51:41: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=45, municipio=MUNICIPIO IGNORADO}. Ocorrências encontradas: 0
+26/08/2016 22:51:42: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=78, municipio=ITAPEVA}. Ocorrências encontradas: 2
+26/08/2016 22:51:42: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=79, municipio=ITAPEVA}. Ocorrências encontradas: 2
+26/08/2016 22:51:42: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=80, municipio=ITAPEVA}. Ocorrências encontradas: 2
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3208, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3209, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3210, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3211, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3212, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3213, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3214, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3215, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3216, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3217, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3218, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3219, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3220, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3221, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3222, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3223, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3224, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3225, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3226, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3227, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3271, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3272, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3273, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3274, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3275, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3276, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3277, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3278, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3279, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3280, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3281, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3282, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3283, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3284, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3285, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3286, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3287, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3341, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3342, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3343, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3344, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3345, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3346, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3347, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3348, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3349, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3350, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3351, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3352, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3353, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3354, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3355, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3356, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:52:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3357, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3358, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3359, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3360, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3361, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3362, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3415, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3416, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3417, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3418, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3419, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3420, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3421, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3422, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3423, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3424, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3481, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3482, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3483, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3484, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3485, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3486, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3487, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3488, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3489, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:02: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3490, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3551, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3552, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3553, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3554, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3555, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3556, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3557, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3558, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3559, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3560, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3561, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3562, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3563, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3564, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3565, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:04: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3630, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3631, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3632, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3633, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3634, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3635, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3636, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3637, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3638, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3639, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3640, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3641, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3642, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3643, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3644, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3645, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3646, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3708, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3709, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3710, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3711, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3712, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3713, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3714, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3715, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3716, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3717, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3718, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3719, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3720, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3775, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3776, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3777, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3778, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3779, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3780, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3781, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3782, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3783, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3784, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3785, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3786, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3787, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3788, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3789, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3790, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3791, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3792, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3793, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:08: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3851, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:08: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3852, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:08: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3853, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3854, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3855, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3856, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3857, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3858, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3859, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3860, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3861, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:16: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4228, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:17: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4291, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4347, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4348, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4349, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4350, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4351, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4352, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4353, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4354, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4355, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4356, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4357, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4358, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4359, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4360, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4361, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4362, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4363, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4364, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4365, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4366, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4367, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:53:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4368, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+26/08/2016 22:55:27: Em andamento! 10000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:00:24: Em andamento! 20000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:04:29: Em andamento! 30000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:08:53: Em andamento! 40000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:13:24: Em andamento! 50000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:18:12: Em andamento! 60000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:23:36: Em andamento! 70000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:29:04: Em andamento! 80000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:34:52: Em andamento! 90000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:41:05: Em andamento! 100000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:47:29: Em andamento! 110000 de 1431617 registros convertidos  até o momento...
+26/08/2016 23:54:25: Em andamento! 120000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:01:23: Em andamento! 130000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:08:29: Em andamento! 140000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:16:07: Em andamento! 150000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:23:55: Em andamento! 160000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:31:32: Em andamento! 170000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:40:24: Em andamento! 180000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:49:12: Em andamento! 190000 de 1431617 registros convertidos  até o momento...
+27/08/2016 00:58:39: Em andamento! 200000 de 1431617 registros convertidos  até o momento...
+27/08/2016 01:07:48: Em andamento! 210000 de 1431617 registros convertidos  até o momento...
+27/08/2016 01:18:10: Em andamento! 220000 de 1431617 registros convertidos  até o momento...
+27/08/2016 01:29:05: Em andamento! 230000 de 1431617 registros convertidos  até o momento...
+27/08/2016 01:40:41: Em andamento! 240000 de 1431617 registros convertidos  até o momento...
+27/08/2016 01:52:35: Em andamento! 250000 de 1431617 registros convertidos  até o momento...
+27/08/2016 02:03:52: Em andamento! 260000 de 1431617 registros convertidos  até o momento...
+27/08/2016 02:15:03: Em andamento! 270000 de 1431617 registros convertidos  até o momento...
+27/08/2016 02:28:21: Em andamento! 280000 de 1431617 registros convertidos  até o momento...
+27/08/2016 02:41:31: Em andamento! 290000 de 1431617 registros convertidos  até o momento...
+27/08/2016 02:54:45: Em andamento! 300000 de 1431617 registros convertidos  até o momento...
+27/08/2016 03:08:00: Em andamento! 310000 de 1431617 registros convertidos  até o momento...
+27/08/2016 03:22:08: Em andamento! 320000 de 1431617 registros convertidos  até o momento...
+27/08/2016 03:36:32: Em andamento! 330000 de 1431617 registros convertidos  até o momento...
+27/08/2016 03:51:26: Em andamento! 340000 de 1431617 registros convertidos  até o momento...
+27/08/2016 04:06:22: Em andamento! 350000 de 1431617 registros convertidos  até o momento...
+27/08/2016 04:21:19: Em andamento! 360000 de 1431617 registros convertidos  até o momento...
+27/08/2016 04:36:22: Em andamento! 370000 de 1431617 registros convertidos  até o momento...
+27/08/2016 04:52:09: Em andamento! 380000 de 1431617 registros convertidos  até o momento...
+27/08/2016 04:58:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=384184, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 04:58:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=384436, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 04:59:21: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=384694, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:02:04: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=386347, municipio=CAMPO GRANDE}. Ocorrências encontradas: 2
+27/08/2016 05:07:32: Em andamento! 390000 de 1431617 registros convertidos  até o momento...
+27/08/2016 05:22:13: Em andamento! 400000 de 1431617 registros convertidos  até o momento...
+27/08/2016 05:37:01: Em andamento! 410000 de 1431617 registros convertidos  até o momento...
+27/08/2016 05:39:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=411906, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:39:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=411907, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:39:57: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=411913, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:40:16: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412109, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:40:52: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412511, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:40:53: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412516, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:41:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412688, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:41:09: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412689, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:41:22: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412834, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:41:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412843, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:41:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=412995, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:41:37: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=413002, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:42:40: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=413655, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:42:40: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=413656, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:42:40: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=413657, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 05:52:16: Em andamento! 420000 de 1431617 registros convertidos  até o momento...
+27/08/2016 06:07:33: Em andamento! 430000 de 1431617 registros convertidos  até o momento...
+27/08/2016 06:22:49: Em andamento! 440000 de 1431617 registros convertidos  até o momento...
+27/08/2016 06:38:36: Em andamento! 450000 de 1431617 registros convertidos  até o momento...
+27/08/2016 06:54:28: Em andamento! 460000 de 1431617 registros convertidos  até o momento...
+27/08/2016 07:11:42: Em andamento! 470000 de 1431617 registros convertidos  até o momento...
+27/08/2016 07:19:38: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=474441, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 07:23:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=476531, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 07:29:09: Em andamento! 480000 de 1431617 registros convertidos  até o momento...
+27/08/2016 07:45:01: Em andamento! 490000 de 1431617 registros convertidos  até o momento...
+27/08/2016 07:48:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=492579, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 07:56:18: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=496409, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 07:56:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=496463, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 07:56:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=496464, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:01:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=499241, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:02:16: Em andamento! 500000 de 1431617 registros convertidos  até o momento...
+27/08/2016 08:03:41: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=500839, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:20:37: Em andamento! 510000 de 1431617 registros convertidos  até o momento...
+27/08/2016 08:21:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=510641, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:25:43: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=513094, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:32:30: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=517193, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:34:18: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=518266, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:37:28: Em andamento! 520000 de 1431617 registros convertidos  até o momento...
+27/08/2016 08:39:53: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=520856, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:40:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=520991, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:45:18: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=524434, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:49:51: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=527149, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:54:13: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=529752, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 08:54:38: Em andamento! 530000 de 1431617 registros convertidos  até o momento...
+27/08/2016 09:05:01: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=536448, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:07:10: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=537881, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:08:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=538964, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:10:43: Em andamento! 540000 de 1431617 registros convertidos  até o momento...
+27/08/2016 09:11:38: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=540550, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:21:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=546221, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:22:51: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=547245, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:26:52: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=549582, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:27:35: Em andamento! 550000 de 1431617 registros convertidos  até o momento...
+27/08/2016 09:31:28: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=552312, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=552865, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 09:44:50: Em andamento! 560000 de 1431617 registros convertidos  até o momento...
+27/08/2016 09:45:34: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=560437, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 10:01:47: Em andamento! 570000 de 1431617 registros convertidos  até o momento...
+27/08/2016 10:17:26: Em andamento! 580000 de 1431617 registros convertidos  até o momento...
+27/08/2016 10:33:43: Em andamento! 590000 de 1431617 registros convertidos  até o momento...
+27/08/2016 10:51:23: Em andamento! 600000 de 1431617 registros convertidos  até o momento...
+27/08/2016 11:07:12: Em andamento! 610000 de 1431617 registros convertidos  até o momento...
+27/08/2016 11:23:31: Em andamento! 620000 de 1431617 registros convertidos  até o momento...
+27/08/2016 11:41:18: Em andamento! 630000 de 1431617 registros convertidos  até o momento...
+27/08/2016 11:54:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=637054, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 11:59:23: Em andamento! 640000 de 1431617 registros convertidos  até o momento...
+27/08/2016 12:01:35: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=641218, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 12:17:19: Em andamento! 650000 de 1431617 registros convertidos  até o momento...
+27/08/2016 12:35:24: Em andamento! 660000 de 1431617 registros convertidos  até o momento...
+27/08/2016 12:51:12: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=668581, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 12:53:48: Em andamento! 670000 de 1431617 registros convertidos  até o momento...
+27/08/2016 13:11:58: Em andamento! 680000 de 1431617 registros convertidos  até o momento...
+27/08/2016 13:12:38: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=680357, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 13:30:22: Em andamento! 690000 de 1431617 registros convertidos  até o momento...
+27/08/2016 13:48:58: Em andamento! 700000 de 1431617 registros convertidos  até o momento...
+27/08/2016 14:07:23: Em andamento! 710000 de 1431617 registros convertidos  até o momento...
+27/08/2016 14:26:08: Em andamento! 720000 de 1431617 registros convertidos  até o momento...
+27/08/2016 14:44:57: Em andamento! 730000 de 1431617 registros convertidos  até o momento...
+27/08/2016 15:04:22: Em andamento! 740000 de 1431617 registros convertidos  até o momento...
+27/08/2016 15:09:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=742964, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:09:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=742967, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:09:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=742969, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:10:14: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=743100, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:23:31: Em andamento! 750000 de 1431617 registros convertidos  até o momento...
+27/08/2016 15:25:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=750805, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:28:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=752400, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:29:35: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753184, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:29:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753185, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:29:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753186, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:29:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753187, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:29:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753188, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:29:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753189, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:30:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753466, municipio=ITAPEVA}. Ocorrências encontradas: 2
+27/08/2016 15:30:05: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=753467, municipio=ITAPEVA}. Ocorrências encontradas: 2
+27/08/2016 15:32:10: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754486, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:10: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754487, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:10: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754488, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:10: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754489, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:13: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754517, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:13: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754518, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:13: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754519, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:13: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754520, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:14: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754521, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:14: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754522, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:14: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754523, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:14: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754524, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:16: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754542, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:16: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754543, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:17: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754544, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754565, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754566, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754567, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754568, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754569, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:19: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754570, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754571, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754572, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754573, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754574, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754575, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754576, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754577, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754578, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754579, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754595, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754596, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754597, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754598, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754599, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754600, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754601, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754602, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754603, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754604, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754605, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754606, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754607, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:24: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754608, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:26: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754621, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:26: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754622, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:26: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754623, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:27: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754624, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:27: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754625, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:27: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754626, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:27: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754627, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:29: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754634, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:29: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754635, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:29: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754636, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:29: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754637, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:29: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754638, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:31: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754650, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:31: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754651, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:31: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754652, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754653, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754654, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754655, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754656, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754657, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:32: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754658, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:35: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754679, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:35: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754680, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754681, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:36: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754682, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754699, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754700, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754701, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754702, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754703, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754802, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754815, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754816, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754817, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754818, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754819, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754820, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754821, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754822, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754823, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754824, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:32:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754825, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:33:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754826, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:33:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754827, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:33:00: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754828, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:33:03: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=754848, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+27/08/2016 15:43:05: Em andamento! 760000 de 1431617 registros convertidos  até o momento...
+27/08/2016 16:00:53: Em andamento! 770000 de 1431617 registros convertidos  até o momento...
+27/08/2016 16:18:49: Em andamento! 780000 de 1431617 registros convertidos  até o momento...
+27/08/2016 16:35:53: Em andamento! 790000 de 1431617 registros convertidos  até o momento...
+27/08/2016 16:53:09: Em andamento! 800000 de 1431617 registros convertidos  até o momento...
+27/08/2016 17:10:51: Em andamento! 810000 de 1431617 registros convertidos  até o momento...
+27/08/2016 17:29:08: Em andamento! 820000 de 1431617 registros convertidos  até o momento...
+27/08/2016 17:47:10: Em andamento! 830000 de 1431617 registros convertidos  até o momento...
+27/08/2016 18:05:13: Em andamento! 840000 de 1431617 registros convertidos  até o momento...
+27/08/2016 18:23:55: Em andamento! 850000 de 1431617 registros convertidos  até o momento...
+27/08/2016 18:45:48: Em andamento! 860000 de 1431617 registros convertidos  até o momento...
+27/08/2016 19:06:22: Em andamento! 870000 de 1431617 registros convertidos  até o momento...
+27/08/2016 19:27:08: Em andamento! 880000 de 1431617 registros convertidos  até o momento...
+27/08/2016 19:46:20: Em andamento! 890000 de 1431617 registros convertidos  até o momento...
+27/08/2016 20:04:47: Em andamento! 900000 de 1431617 registros convertidos  até o momento...
+27/08/2016 20:22:48: Em andamento! 910000 de 1431617 registros convertidos  até o momento...
+27/08/2016 20:41:26: Em andamento! 920000 de 1431617 registros convertidos  até o momento...
+27/08/2016 21:00:18: Em andamento! 930000 de 1431617 registros convertidos  até o momento...
+27/08/2016 21:20:31: Em andamento! 940000 de 1431617 registros convertidos  até o momento...
+27/08/2016 21:40:05: Em andamento! 950000 de 1431617 registros convertidos  até o momento...
+27/08/2016 22:00:10: Em andamento! 960000 de 1431617 registros convertidos  até o momento...
+27/08/2016 22:21:23: Em andamento! 970000 de 1431617 registros convertidos  até o momento...
+27/08/2016 22:42:57: Em andamento! 980000 de 1431617 registros convertidos  até o momento...
+27/08/2016 23:02:22: Em andamento! 990000 de 1431617 registros convertidos  até o momento...
+27/08/2016 23:20:27: Em andamento! 1000000 de 1431617 registros convertidos  até o momento...
+27/08/2016 23:38:43: Em andamento! 1010000 de 1431617 registros convertidos  até o momento...
+27/08/2016 23:57:42: Em andamento! 1020000 de 1431617 registros convertidos  até o momento...
+28/08/2016 00:16:43: Em andamento! 1030000 de 1431617 registros convertidos  até o momento...
+28/08/2016 00:35:21: Em andamento! 1040000 de 1431617 registros convertidos  até o momento...
+28/08/2016 00:54:39: Em andamento! 1050000 de 1431617 registros convertidos  até o momento...
+28/08/2016 01:13:35: Em andamento! 1060000 de 1431617 registros convertidos  até o momento...
+28/08/2016 01:32:51: Em andamento! 1070000 de 1431617 registros convertidos  até o momento...
+28/08/2016 01:51:56: Em andamento! 1080000 de 1431617 registros convertidos  até o momento...
+28/08/2016 02:10:52: Em andamento! 1090000 de 1431617 registros convertidos  até o momento...
+28/08/2016 02:30:02: Em andamento! 1100000 de 1431617 registros convertidos  até o momento...
+28/08/2016 02:50:10: Em andamento! 1110000 de 1431617 registros convertidos  até o momento...
+28/08/2016 02:51:45: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1110821, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 02:51:45: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1110823, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 02:51:45: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1110824, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 02:54:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1111887, municipio=CAMPO GRANDE}. Ocorrências encontradas: 2
+28/08/2016 02:54:07: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1111888, municipio=CAMPO GRANDE}. Ocorrências encontradas: 2
+28/08/2016 03:09:49: Em andamento! 1120000 de 1431617 registros convertidos  até o momento...
+28/08/2016 03:23:54: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127382, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:23:54: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127383, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:26: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127649, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:26: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127653, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:26: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127654, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127761, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:39: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127762, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:52: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127879, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:24:52: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1127881, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128003, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128005, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128006, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:06: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128007, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:47: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128357, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:47: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128358, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:25:47: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1128359, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 03:29:01: Em andamento! 1130000 de 1431617 registros convertidos  até o momento...
+28/08/2016 03:47:47: Em andamento! 1140000 de 1431617 registros convertidos  até o momento...
+28/08/2016 04:06:37: Em andamento! 1150000 de 1431617 registros convertidos  até o momento...
+28/08/2016 04:25:26: Em andamento! 1160000 de 1431617 registros convertidos  até o momento...
+28/08/2016 04:44:15: Em andamento! 1170000 de 1431617 registros convertidos  até o momento...
+28/08/2016 05:03:09: Em andamento! 1180000 de 1431617 registros convertidos  até o momento...
+28/08/2016 05:22:20: Em andamento! 1190000 de 1431617 registros convertidos  até o momento...
+28/08/2016 05:41:42: Em andamento! 1200000 de 1431617 registros convertidos  até o momento...
+28/08/2016 06:01:09: Em andamento! 1210000 de 1431617 registros convertidos  até o momento...
+28/08/2016 06:03:20: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1211067, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:04:04: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1211415, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:05:28: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1212087, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:06:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1212530, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:06:55: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1212795, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:07:59: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1213302, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:10:41: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1214612, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:12:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1215595, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:15:23: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1216795, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 06:23:22: Em andamento! 1220000 de 1431617 registros convertidos  até o momento...
+28/08/2016 06:41:31: Em andamento! 1230000 de 1431617 registros convertidos  até o momento...
+28/08/2016 07:00:35: Em andamento! 1240000 de 1431617 registros convertidos  até o momento...
+28/08/2016 07:21:28: Em andamento! 1250000 de 1431617 registros convertidos  até o momento...
+28/08/2016 07:28:12: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1253349, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 07:41:33: Em andamento! 1260000 de 1431617 registros convertidos  até o momento...
+28/08/2016 08:02:32: Em andamento! 1270000 de 1431617 registros convertidos  até o momento...
+28/08/2016 08:22:48: Em andamento! 1280000 de 1431617 registros convertidos  até o momento...
+28/08/2016 08:44:06: Em andamento! 1290000 de 1431617 registros convertidos  até o momento...
+28/08/2016 09:04:29: Em andamento! 1300000 de 1431617 registros convertidos  até o momento...
+28/08/2016 09:24:57: Em andamento! 1310000 de 1431617 registros convertidos  até o momento...
+28/08/2016 09:45:24: Em andamento! 1320000 de 1431617 registros convertidos  até o momento...
+28/08/2016 10:05:51: Em andamento! 1330000 de 1431617 registros convertidos  até o momento...
+28/08/2016 10:22:15: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1338039, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 10:26:35: Em andamento! 1340000 de 1431617 registros convertidos  até o momento...
+28/08/2016 10:46:32: Em andamento! 1350000 de 1431617 registros convertidos  até o momento...
+28/08/2016 11:05:19: Em andamento! 1360000 de 1431617 registros convertidos  até o momento...
+28/08/2016 11:24:33: Em andamento! 1370000 de 1431617 registros convertidos  até o momento...
+28/08/2016 11:31:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1374130, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 11:42:58: Em andamento! 1380000 de 1431617 registros convertidos  até o momento...
+28/08/2016 11:44:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1380998, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 12:02:25: Em andamento! 1390000 de 1431617 registros convertidos  até o momento...
+28/08/2016 12:08:12: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1392981, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 12:15:56: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1396932, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 12:16:16: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1397103, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+28/08/2016 12:16:45: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1397355, municipio=RIO CLARO}. Ocorrências encontradas: 2
+28/08/2016 12:21:55: Em andamento! 1400000 de 1431617 registros convertidos  até o momento...
+28/08/2016 12:41:43: Em andamento! 1410000 de 1431617 registros convertidos  até o momento...
+28/08/2016 13:01:30: Em andamento! 1420000 de 1431617 registros convertidos  até o momento...
+28/08/2016 13:21:01: Em andamento! 1430000 de 1431617 registros convertidos  até o momento...
+28/08/2016 13:24:20: Finalizado! 1431617 registros convertidos.
+CONSTRUÍDO COM SUCESSO (tempo total: 2.314 minutos 43 segundos)

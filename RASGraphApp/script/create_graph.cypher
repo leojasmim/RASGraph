@@ -41,7 +41,7 @@ CREATE (:Esgotamento {descricao: row.descricao, esgotamentoID: row.id});
 // Create Residencia
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
-CREATE (:Residencia {residenciaID: row.id, energiaEletrica: row.energiaeletrica, comodos: row.comodos});
+CREATE (:Residencia {residenciaID: row.id, energiaEletrica: row.energia, comodos: row.comodos});
 
 // Create GrupoComunitario
 USING PERIODIC COMMIT
@@ -149,7 +149,7 @@ MATCH (bairro:Bairro {bairroID: row.id})
 MATCH (municipio:Municipio {municipioID: row.municipio_id})
 MERGE (bairro)-[:LOCALIZADO_EM]->(municipio);
 
-//Residencia
+//Residencia Relationships
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
 MATCH (residencia:Residencia {residenciaID: row.id})
@@ -166,7 +166,7 @@ MERGE (residencia)-[:FAZ]->(tratamentoagua)
 MERGE (residencia)-[:E_DE_UM]->(tipohabitacao)
 MERGE (residencia)-[:CONTEM_UM_SISTEMA]->(esgotamento);
 
-//Paciente
+//Paciente Relationships
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///paciente.csv" AS row
 MATCH (paciente:Paciente {pacienteID: row.id})
@@ -206,7 +206,7 @@ MERGE (unidadesaude)-[:SOLICITA_UMA]->(internacao)
 MERGE (unidadesaude)-[:RECEBE_UMA]->(internacao)
 MERGE (internacao)-[:EM_DECORRENCIA_DE_UMA]->(doenca);
 
-//Atendimento->doenca
+//Atendimento->Doenca
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///atendimento.csv" AS row
 MATCH (atendimento:Atendimento {atendimentoID: row.id})
