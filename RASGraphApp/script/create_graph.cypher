@@ -149,21 +149,46 @@ MATCH (bairro:Bairro {bairroID: row.id})
 MATCH (municipio:Municipio {municipioID: row.municipio_id})
 MERGE (bairro)-[:LOCALIZADO_EM]->(municipio);
 
-//Residencia Relationships
+//Residencia -> Bairro
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
 MATCH (residencia:Residencia {residenciaID: row.id})
 MATCH (bairro:Bairro {bairroID: row.bairro_id})
-MATCH (lixo:Lixo {lixoID: row.coletalixo_id})
-MATCH (abastecimentoagua:AbastecimentoAgua {abastecimentoaguaID: row.abastecimentoagua_id})
-MATCH (tratamentoagua:TratamentoAgua {tratamentoaguaID: row.tratamentoagua_id})
-MATCH (tipohabitacao:TipoHabitacao {tipohabitacaoID: row.tipohab_id})
-MATCH (esgotamento:Esgotamento {esgotamentoID: row.esgotamento_id})
 MERGE (residencia)-[:SITUADA_EM]->(bairro)
+
+//Residencia -> Lixo
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
+MATCH (residencia:Residencia {residenciaID: row.id})
+MATCH (lixo:Lixo {lixoID: row.coletalixo_id})
 MERGE (residencia)-[:DA_DESTINO_AO]->(lixo)
+
+//Residencia -> AbastecimentoAgua
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
+MATCH (residencia:Residencia {residenciaID: row.id})
+MATCH (abastecimentoagua:AbastecimentoAgua {abastecimentoaguaID: row.abastecimentoagua_id})
 MERGE (residencia)-[:ABASTECIDA_POR]->(abastecimentoagua)
+
+//Residencia -> TratamentoAgua
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
+MATCH (residencia:Residencia {residenciaID: row.id})
+MATCH (tratamentoagua:TratamentoAgua {tratamentoaguaID: row.tratamentoagua_id})
 MERGE (residencia)-[:FAZ]->(tratamentoagua)
+
+//Residencia -> TipoHabitacao
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
+MATCH (residencia:Residencia {residenciaID: row.id})
+MATCH (tipohabitacao:TipoHabitacao {tipohabitacaoID: row.tipohab_id})
 MERGE (residencia)-[:E_DE_UM]->(tipohabitacao)
+
+//Residencia -> Esgotamento
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "file:///residencia.csv" AS row
+MATCH (residencia:Residencia {residenciaID: row.id})
+MATCH (esgotamento:Esgotamento {esgotamentoID: row.esgotamento_id})
 MERGE (residencia)-[:CONTEM_UM_SISTEMA]->(esgotamento);
 
 //Paciente Relationships
