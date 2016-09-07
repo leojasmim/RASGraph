@@ -279,7 +279,3 @@ LOAD CSV WITH HEADERS FROM "file:///atendimento.csv" AS row
 MATCH (atendimento:Atendimento {atendimentoID: row.id})
 MATCH (unidadesaude: UnidadeSaude {unidadesaudeID: row.unid_atend_id})
 MERGE (unidadesaude)-[:PRESTA_UM]->(atendimento)
-
-//QUERIES
-//Todos os bairros do municipio do Rio de Janeiro
-MATCH p=()-[r:LOCALIZADO_EM]->(m:Municipio) WHERE m.nome = 'RIO DE JANEIRO' RETURN p LIMIT 25
