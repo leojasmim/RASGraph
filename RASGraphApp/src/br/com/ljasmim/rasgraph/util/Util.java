@@ -1,9 +1,16 @@
 package br.com.ljasmim.rasgraph.util;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Classe com métodos utilitários
@@ -78,4 +85,23 @@ public class Util {
         }
         return "";
     }
+
+    public static List<String> getRelativePathsFromFile(String pathFile) {
+        Scanner in;
+        List<String> relativePaths = new ArrayList<>();
+        try {
+            in = new Scanner(new FileReader(pathFile));
+            while (in.hasNextLine()) {
+                String line = in.nextLine();
+                if (!line.substring(0, 2).equals("--")) {
+                    relativePaths.add(line);
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getLocalizedMessage());
+            return null;
+        }
+        return relativePaths;
+    }
+
 }

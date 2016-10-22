@@ -16,3 +16,4 @@ hs_err_pid*
 /RASGraphApp/dist/
 /RASGraphApp/build/
 /RASGraphApp/csv/
+/RASGraphApp/backup/

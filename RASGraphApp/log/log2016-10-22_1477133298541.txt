@@ -1,0 +1,94 @@
+22/10/2016 08:48:18: Criação da Base iniciada...
+CREATE DATABASE
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+22/10/2016 08:48:35: Base criada com com sucesso !!!
+22/10/2016 08:48:40: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\ibge_municipios_2015.csv preparado para importacao...
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+COPY 5571
+VACUUM
+22/10/2016 08:48:45: Carregamento dos arquivos CSV iniciado...
+22/10/2016 08:48:45: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\02trim2016_saude_dentistas.csv preparado para importacao...
+22/10/2016 08:48:45: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\03trim2016_saude_dentistas.csv preparado para importacao...
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+COPY 248
+COPY 333
+VACUUM
+22/10/2016 08:48:48: Carregamento dos arquivos CSV concluído !!!
+22/10/2016 08:48:48: Conversão iniciada... 0 de 581 registros convertidos
+22/10/2016 08:48:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=1, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=2, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=3, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=4, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=5, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:48: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=6, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=250, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=251, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=252, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:48:58: Não foi possivel determinar o municipio do RegistroDeAtendimento{id=253, municipio=NAO INFORMADO}. Ocorrências encontradas: 0
+22/10/2016 08:49:06: Finalizado! 581 registros convertidos.

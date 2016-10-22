@@ -1,0 +1,80 @@
+22/10/2016 08:38:30: Criação da Base iniciada...
+CREATE DATABASE
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+DROP TABLE
+CREATE TABLE
+ALTER TABLE
+22/10/2016 08:38:58: Base criada com com sucesso !!!
+22/10/2016 08:40:02: Carregamento dos arquivos CSV iniciado...
+22/10/2016 08:40:38: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\02trim2016_saude_dentistas.csv preparado para importacao...
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+COPY 248
+VACUUM
+22/10/2016 08:41:08: C:\Users\leoja\Workspaces\Projetos\Projeto RASGraph\RASGraph\RASGraphApp\csv\ibge_municipios_2015.csv preparado para importacao...
+Voc� est� conectado agora ao banco de dados "rasgraph_db" como usu�rio "postgres".
+COPY 5571
+VACUUM
+22/10/2016 08:41:15: Carregamento dos arquivos CSV concluído !!!

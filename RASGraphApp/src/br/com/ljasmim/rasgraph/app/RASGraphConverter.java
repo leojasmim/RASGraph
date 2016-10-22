@@ -61,6 +61,7 @@ import java.util.List;
 public class RASGraphConverter {
 
     PrintStream consoleLog;
+    List<String> pathsToCSV;
 
     public RASGraphConverter() throws FileNotFoundException {
         String logPath = "log\\log" + Util.getNowSqlDateString() + ".txt";
@@ -68,12 +69,12 @@ public class RASGraphConverter {
         System.setOut(consoleLog);
     }
 
-    public void start() throws IOException {
-        verificaDatabase();
+    public void start(List<String> relativePaths) throws IOException {
+        verificaDatabase(relativePaths);
         converterRegistros();
     }
 
-    public void verificaDatabase() throws IOException {
+    public void verificaDatabase(List<String> relativePaths) throws IOException {
         if (!hasDatabase()) {
             consoleLog.println(Util.getNowLocalDateString() + ": "
                     + "Criação da Base iniciada...");
@@ -81,11 +82,17 @@ public class RASGraphConverter {
             consoleLog.println(Util.getNowLocalDateString() + ": "
                     + "Base criada com com sucesso !!!");
         }
-        if (isTodosRegistrosConvertidos()) {
+
+        if (!hasMunicipiosCarregados()) {
+            carregaCsvFileWithMunicipio(getPathsCsvWithMunicipio());
             consoleLog.println(Util.getNowLocalDateString() + ": "
                     + "Carregamento dos arquivos CSV iniciado...");
-            carregaCsvFileWithRegistroAtendimento(getPathsCsvWithRegistroAtendimento());
-            carregaCsvFileWithMunicipio(getPathsCsvWithMunicipio());
+        }
+
+        if (isTodosRegistrosConvertidos() && !relativePaths.isEmpty()) {
+            consoleLog.println(Util.getNowLocalDateString() + ": "
+                    + "Carregamento dos arquivos CSV iniciado...");
+            carregaCsvFileWithRegistroAtendimento(getPathsCsvWithRegistroAtendimento(relativePaths));
             consoleLog.println(Util.getNowLocalDateString() + ": "
                     + "Carregamento dos arquivos CSV concluído !!!");
         }
@@ -120,15 +127,14 @@ public class RASGraphConverter {
                 + "Finalizado! " + count + " registros convertidos.");
     }
 
-    public List<String> getPathsCsvWithRegistroAtendimento() {
-        List<String> paths = new ArrayList<>();
+    public List<String> getPathsCsvWithRegistroAtendimento(List<String> relativePaths) {
+        List<String> absolutePaths = new ArrayList<>();
 
-        paths.add(Util.getAbsolutePath("csv/saude_medicos-dados_abertos.csv"));
-        paths.add(Util.getAbsolutePath("csv/saude_dentistas-dados_abertos.csv"));
-        paths.add(Util.getAbsolutePath("csv/saude_enfermeiros-dados_abertos.csv"));
-        paths.add(Util.getAbsolutePath("csv/saude_outrosprofissionais-dados_abertos.csv"));
+        for (String rp : relativePaths) {
+            absolutePaths.add(Util.getAbsolutePath(rp));
+        }
 
-        return paths;
+        return absolutePaths;
     }
 
     public void carregaCsvFileWithRegistroAtendimento(List<String> paths) throws IOException {
@@ -544,5 +550,10 @@ public class RASGraphConverter {
 
     private boolean isMunicipioDaRegiaoSul(Municipio municipio) {
         return municipio.getCodigoUf() >= 41 && municipio.getCodigoUf() <= 43;
+    }
+
+    private boolean hasMunicipiosCarregados() {
+        MunicipioDAO mDAO = new MunicipioDAO();
+        return mDAO.count() > 0;
     }
 }
